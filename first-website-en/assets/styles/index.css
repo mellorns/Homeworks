@@ -1,0 +1,116 @@
+body {
+    background-color: rgb(253 229 199);
+}
+
+header a {
+    color: rgb(249, 184, 105);
+    text-decoration: none;
+}
+
+header a:visited {
+    color: rgb(183, 107, 13);
+}
+
+header a:hover {
+    color: rgb(187, 126, 53);
+}
+
+header a:active {
+    color: black;
+}
+
+div.container {
+    width: 50%;
+    margin: auto;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 15px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(249, 184, 105);
+}
+
+header {
+    margin: 10px;
+}
+
+header .languge-button {
+    background-color: rgb(217, 156, 82);
+    border-radius: 5px;
+    color: white;
+}
+
+div.profile {
+    display: flex;
+}
+
+
+.profile-img {
+
+    width: 50%;
+}
+
+.profile-img img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+div.container>div {
+    margin: 10px;
+}
+
+.profile-info {
+    list-style-type: none;
+}
+
+.profile-info li {
+    margin: 30px 30px 30px 0px;
+}
+
+.contacts ul {
+    list-style-type: none;
+}
+
+.contacts li {
+    float: left;
+    margin-right: 30px;
+}
+
+.contacts a {
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    color: rgb(249, 184, 105);
+}
+
+.contacts ul {
+    overflow: hidden;
+    padding: 0px;
+    margin: 0;
+}
+
+.contacts a:visited {
+    color: rgb(183, 107, 13);
+}
+
+.contacts a:hover {
+    color: rgb(187, 126, 53);
+}
+
+
+.experience,
+.education {
+    border-bottom: 1px solid rgb(249, 184, 105);
+    ;
+}
+
+.experience ul,
+.education ul,
+.skills ul {
+    list-style-type: circle;
+}
+
+.experience li,
+.education li,
+.skills li {
+    padding: 10px;
+}
