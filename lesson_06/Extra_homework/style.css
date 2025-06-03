@@ -1,0 +1,25 @@
+.container {
+    width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+.form-row {
+    margin-bottom: 15px;
+}
+
+
+.form-row .label-block {
+    display: inline-block;
+    width: 200px;
+}
+
+textarea {
+    resize: none;
+}
+
+
+.second-page {
+    display: none;
+}

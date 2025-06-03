@@ -1,0 +1,29 @@
+.container {
+    width: 400px;
+    margin: 0 auto;
+    border: 1px solid rgb(94, 88, 88);
+    background-color: rgb(227, 226, 226);
+    padding: 20px;
+}
+
+.form-row {
+    margin-bottom: 15px;
+}
+
+.form-row .label-block {
+    display: inline-block;
+    width: 200px;
+}
+
+.age-input {
+    width: 40px;
+}
+
+.form-row textarea {
+    height: 70px;
+    resize: none;
+}
+
+.form-row.buttons {
+    text-align: center;
+}

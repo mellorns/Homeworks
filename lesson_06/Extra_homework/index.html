@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="style.css">
+    <title>Practice</title>
+</head>
+
+<body>
+    <a href="../index.html">Back</a>
+
+
+    <div class="container">
+
+
+        <form method="post" enctype="multipart/form-data" oninput="x.value=parseInt(salary.value)" id="my_form"
+            onsubmit="alert(decodeURI(new URLSearchParams(Array.from(new FormData(document.getElementById('my_form')))).toString()));return false;">
+            <fieldset class="first-page" id="first_page">
+                <legend>First step</legend>
+                <div class="form-row">
+                    <label class="label-block" for="fname">Імʼя</label>
+                    <input type="text" placeholder="Імʼя" id="fname" name="fname">
+                </div>
+                <div class="form-row">
+                    <label class="label-block " for="fname">Фамілія</label>
+                    <input type="text" placeholder="Фамілія" id="lname" name="lname">
+                </div>
+                <div class="form-row">
+                    <label class="label-block " for="phone_number">Номер телефону</label>
+                    <input type="tel" placeholder="+380*******" id="phone_number" name="phone_number">
+                </div>
+                <div class="form-row">
+                    <label class="label-block " for="email">Email</label>
+                    <input type="email" id="email" name="email">
+                </div>
+                <div class="form-row">
+                    <span class="label-block">Ваша стать</span>
+
+                    <input type="radio" id="female" name="sex" checked>
+                    <label class="label-block " for="female">Чоловік</label>
+
+                    <input type="radio" id="male" name="sex">
+                    <label class="label-block " for="male">Жінка</label>
+                </div>
+                <div class="form-row">
+                    <label class="label-block" for="birth_data">Дата народження</label>
+                    <input type="date" id="birth_data" name="birth_data" min="1970-01-01" max="2025-01-01">
+                </div>
+                <div class="form-row">
+                    <label class="label-block" for="salary">Бажана компенсація</label>
+                    <input type="range" id="salary" value="100" name="salary" step="100" min="500" max="1000">
+                    <output name="x" for="salary">500</output>
+                </div>
+                <button id="nextB" onclick="showNextPage()" type="button">Далі</button>
+            </fieldset>
+            <fieldset class="second-page" id="second_page">
+                <legend>Second step</legend>
+                <div class="form-row">
+                    <label class="label-block" for="years_of_work">Досвід роботи</label>
+                    <select id="years_of_work" name="years_of_work">
+                        <option value="1_year">1 рік</option>
+                        <option value="2_years">2 роки</option>
+                        <option value="3_years">3 роки</option>
+                        <option value="5_years">5 років</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <label class="label-block" for="education">Ваша освіта</label>
+                    <select id="education" name="education">
+                        <option value="basic">Базова</option>
+                        <option value="bachelor">Бакалавр</option>
+                        <option value="master">Магістр</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <label class="label-block" for="education_place">Навчальний заклад</label>
+                    <textarea id="education_place" name="education_place" rows="1" cols="50"></textarea>
+
+                </div>
+                <div class="form-row">
+                    <p>Оберіть свій стек</p>
+                    <label class="label-block " for="phone_number">React</label>
+                    <input type="checkbox" id="react" name="steck">
+                </div>
+                <div class="form-row">
+                    <label class="label-block " for="phone_number">Vue</label>
+                    <input type="checkbox" id="Vue" name="steck">
+                </div>
+                <div class="form-row">
+                    <label class="label-block " for="phone_number">Angular</label>
+                    <input type="checkbox" id="angular" name="steck">
+                </div>
+                <div class="form-row">
+                    <label class="label-block " for="comment_section">Можете додати сюди свій коментар</label>
+                    <textarea id="comment_section" name="comment" maxlength="1000" rows="5" cols="50"></textarea>
+                </div>
+                <div class="form-row">
+                    <label class="label-block" for="github">Посилання на ваш GitHub</label>
+                    <input id="github" name="github" type="url">
+                </div>
+
+                <div class="form-row">
+                    <label class="label-block " for="fav_color">Виберіть ваш улюблений колір</label>
+                    <input type="color" id="fav_color" name="fav_color" >
+                    <button type="button" onclick="changeDocumentColor()">Змінити колір тексту на ваш</button>
+                </div>
+                <div class="form-row">
+                    <label class="label-block" for="CV">Завантажте ваш CV</label>
+                    <input type="file" id="CV" name="CV">
+                </div>
+                <button type="submit">Надіслати</button>
+            </fieldset>
+
+        </form>
+
+    </div>
+    <script>
+        let fp = document.getElementById("first_page")
+        let sp = document.getElementById("second_page")
+        let nextButton = document.getElementById("nextB")        
+
+        function changeDocumentColor() {
+            document.querySelector("form").style.color = document.getElementById("fav_color").value;
+        }
+
+        function showNextPage() {
+            fp.style.display = 'none'
+            sp.style.display = 'block'
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="style.css">
+    <title>Practice</title>
+</head>
+
+<body>
+    <div class="container">
+        <form method="post" id="my_form"
+            onsubmit="alert(decodeURI(new URLSearchParams(Array.from(new FormData(document.getElementById('my_form')))).toString()));return false;">
+            <div class="form-row">
+                <label class="label-block" for="full-name">Повне імʼя</label>
+                <input type="text" required name="Full_name" minlength="2å" id="full-name">
+            </div>
+            <div class="form-row">
+                <label class="label-block" for="email">Email</label>
+                <input type="email" name="email" id="email" required>
+            </div>
+            <div class="form-row">
+                <label class="label-block" for="password">Пароль</label>
+                <input type="password" name="password" id="password" required>
+            </div>
+            <div class="form-row">
+                <label class="label-block" for="repassword">Пароль ще раз</label>
+                <input type="password" name="repassword" id="repassword" required>
+            </div>
+            <div class="form-row">
+                <span class="label-block">Стать</span>
+                <input type="radio" name="sex" value="male" id="male" required checked>
+                <label for="male" id="male">Чоловіча</label>
+                <input type="radio" name="sex" value="female" id="female" required>
+                <label for="female" id="female">Жіноча</label>
+            </div>
+            <div class="form-row">
+                <label class="label-block" for="age">Вік</label>
+                <input class="age-input" name="age" id="age" type="number" min="18" required>
+            </div>
+            <div class="form-row">
+                <label class="label-block" for="course">Курс</label>
+                <select id="course" name="course" required>
+                    <option value="">=Виберіть курс=</option>
+                    <option value="Front-end">Front end</option>
+                    <option value="Back-end">Back end</option>
+                    <option value="QE">QE</option>
+                    <option value="Project-manegment">Project manegment</option>
+                </select>
+            </div>
+            <div class="form-row">
+                <label class="label-block" for="addres">Повна адреса</label>
+                <textarea name="addres" id="addres" placeholder="Країна, регіон, місто/селище, вулиця"
+                    required></textarea>
+            </div>
+            <div class="form-row">
+                <input type="checkbox" name="user_agreement" id="user_agreement" required>
+                <label for="user_agreement">Я погоджуюсь з обробкою персональних даних</label>
+            </div>
+            <div class="form-row buttons">
+                <button type="reset">Очистити форму</button>
+                <button type="submit">Зареєструватися</button>
+            </div>
+        </form>
+    </div>
+    <a href="Extra_homework/index.html">Extra Homework</a>
+</body>
+
+</html>
