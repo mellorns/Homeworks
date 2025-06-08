@@ -1,23 +1,19 @@
 * {
     margin: 0;
     padding: 0;
-}
-
-@font-face {
-    font-family: "OpenSans";
-    src: url();
+    box-sizing: border-box;
 }
 
 body {
     color: #070707;
-  font-family: "Open Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+    font-size: 1.125rem;
 }
 
+img {
+    vertical-align: top;
+}
 
 ul {
     list-style: none;
@@ -25,16 +21,19 @@ ul {
 
 #home img,
 #portfolio img {
-    width: 100%;
+    max-width: 100%;
+    height: auto;
 }
 
 header nav a {
     text-decoration: none;
     color: #828282;
+    font-size: 1.125rem;
 }
 
-a:active {
+header nav a:hover {
     color: #070707;
+    text-shadow: 1px 0 1px #070707, 0 1px 1px #070707, -1px 0 1px #070707, 0 -1px 1px #070707;
 }
 
 .active {
@@ -46,27 +45,36 @@ a:active {
     margin-inline: auto;
 }
 
-.container nav ul {
-    font-size: 0;
-    text-align: center;
-    margin: 27.5px 0;
-}
-
-.container nav ul li {
-    display: inline-block;
-    font-size: 1.125rem;
-    margin: 0 20px;
-}
-
 header .container {
+    padding: 27.5px 0;
     border-bottom: 1px solid #828282;
 }
 
+.main-menu ul {
+    font-size: 0;
+}
 
-#home h1 {
-    margin-top: 12px;
+.main-menu ul li {
+    display: inline-block;
+}
+
+.main-menu ul li {
+    display: inline-block;
+}
+
+.main-menu ul li:not(:last-child) {
+    margin-right: 40px;
+}
+
+
+.home-section {
+    padding-top: 12px;
+}
+
+.home-section h1 {
     margin-bottom: 50px;
     font-size: 3rem;
+    text-align: left;
 }
 
 #about_me {
@@ -76,47 +84,46 @@ header .container {
 }
 
 #about_me h2 {
-    padding-top: 100px;
+
     margin-bottom: 50px;
 }
 
-#about_me .content {
-    text-align: center;
+section,
+footer {
+    padding: 100px 0;
+}
+
+
+.content {
     max-width: 480px;
     margin: 0 auto;
-
 }
 
-#about_me .content p {
+.content p:not(:last-child) {
     margin-bottom: 30px;
-    font-size: 1.125rem;
 }
 
-#skills .container {
-    text-align: center;
-    padding-bottom: 100px;
-}
-
-#skills .container hgroup {
-    margin-top: 100px;
+hgroup {
     margin-bottom: 50px;
 }
 
-#skills .container hgroup h2 {
+hgroup h2 {
     margin-bottom: 20px;
 }
 
 .skills-list {
     font-size: 0;
-    text-align: left;
 }
 
 .skills-list li {
     display: inline-block;
     font-size: 0.875rem;
+    width: 170px;
+    margin-left: -1px;
+}
+
+.skills-list li:not(:last-child) {
     margin-right: 97px;
-    width: 167px;
-    text-align: center;
 }
 
 .skills-list figure {
@@ -137,80 +144,93 @@ header .container {
 }
 
 
+
+
 #portfolio {
     background-color: #F6F6F6;
-    text-align: center;
 }
 
-#portfolio .container {
-    padding: 59px 0;
-}
-
-#portfolio h2 {
+h2 {
     margin-bottom: 50px;
+    font-size: 2.125rem;
 }
 
-#portfolio a {
+.portfolio-item a {
     text-decoration: underline;
     color: #070707;
 }
 
-#portfolio div img {
+.portfolio-item img {
     margin-bottom: 40px;
 }
 
-#portfolio div p {
+.portfolio-item:not(:last-child) {
     margin-bottom: 70px;
 }
 
-footer {
-    text-align: center;
-    padding-top: 100px;
-}
-
-footer hgroup {
-    width: 230px;
-    margin: 0 auto 60px;
-}
-
-footer hgroup h2 {
-    margin-bottom: 20px;
-}
-
-.button-link {
-    width: 180px;
-    background-color: #070707;
-    margin-inline: auto;
-    padding: 12px 16px;
-    margin-bottom: 40px;
-    border-radius: 20px;
-}
-
-.button-link a {
-    color: #fff;
+.portfolio-item a:hover {
     text-decoration: none;
-    font-weight: 700;
-    font-size: 1.125rem;
-    letter-spacing: 0.1125rem;
 }
+
+
+footer .container {
+    width: min(90%, 310px)
+}
+
+
+.btn {
+    display: inline-block;
+    min-width: 80px;
+    background-color: #070707;
+    color: #fff;
+    padding: 5px 16px;
+    text-decoration: none;
+    border-radius: 22px;
+    line-height: 30px;
+    font-family: "Open Sans", sans-serif;
+    border: none;
+    font-weight: 700;
+    letter-spacing: 0.1125rem;
+
+}
+
+.button-wrap {
+    margin-bottom: 40px;
+}
+
 
 .footer-navigation {
     font-size: 0;
+    margin-bottom: 60px;
 }
 
 .footer-navigation li {
     display: inline-block;
-    margin: 0 25px;
 }
 
-.footer-navigation {
-    margin-bottom: 60px;
+.footer-navigation li+li {
+    margin-left: 50px;
+}
+
+.footer-navigation li img {
+    width: 40px;
+
+}
+
+.footer-navigation li a {
+    opacity: .7;
+}
+
+.footer-navigation li a:hover {
+    opacity: 1;
+}
+
+
+footer hgroup {
+    padding: 0 10px;
 }
 
 .footer-last-text {
-    margin-bottom: 100px;
-    font-size: 0.875rem;
     color: #828282;
-    width: 200px;
-    margin-inline: auto;
+    font-size: 0.875rem;
 }

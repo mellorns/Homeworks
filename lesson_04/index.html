@@ -14,7 +14,7 @@
 <body>
     <header>
         <div class="container">
-            <nav>
+            <nav class="main-menu">
                 <ul>
                     <li><a href="#home" class="active">Home</a></li>
                     <li><a href="#about_me">About me</a></li>
@@ -26,10 +26,14 @@
         </div>
     </header>
     <main>
-        <section id="home">
+        <section class="home-section">
             <div class="container">
-                <h1>Denis Novik</h1>
-                <img src="assets/images/main_photo.jpg" alt="Profile photo">
+                <figure>
+                    <figcaption>
+                        <h1>Denis Novik</h1>
+                    </figcaption>
+                    <img src="assets/images/main_photo.jpg" alt="Profile photo">
+                </figure>
             </div>
         </section>
         <section id="about_me">
@@ -117,42 +121,32 @@
                     Portfolio
                 </h2>
 
-                <!-- <figure>
+                <div class="portfolio-item">
                     <img src="assets/images/Fashion-Store.jpg" alt="Fashion Store">
-                    <figcaption>
-                        <a href="#">
+                    <div>
+                        <a href="#" rel="noreferrer nofollow" target="_blank">
                             Online ashion store - Homepage
                         </a>
-                    </figcaption>
-                </figure> -->
-
-
-                <div>
-                    <img src="assets/images/Fashion-Store.jpg" alt="Fashion Store">
-                    <p>
-                        <a href="#">
-                            Online ashion store - Homepage
-                        </a>
-                    </p>
+                    </div>
                 </div>
 
 
-                <div>
+                <div class="portfolio-item">
                     <img src="assets/images/reebok_web.jpg" alt="Reebok Web">
-                    <p>
-                        <a href="#">
+                    <div>
+                        <a href="#" rel="noreferrer nofollow" target="_blank">
                             Reebok Store - Concept
                         </a>
-                    </p>
+                    </div>
 
                 </div>
-                <div>
+                <div class="portfolio-item">
                     <img src="assets/images/braun-landing.jpg" alt="Braun Landing">
-                    <p>
-                        <a href="#">
+                    <div>
+                        <a href="#" rel="noreferrer nofollow" target="_blank">
                             Braun Landing Page - Concept
                         </a>
-                    </p>
+                    </div>
                 </div>
 
             </div>
@@ -168,8 +162,8 @@
                     You are welcome!</p>
             </hgroup>
 
-            <div class="button-link">
-                <a href="mailto:example@gmail.com">Send message</a>
+            <div class="button-wrap">
+                <a href="mailto:example@gmail.com" class="btn">Send message</a>
             </div>
             <ul class="footer-navigation">
                 <li>
