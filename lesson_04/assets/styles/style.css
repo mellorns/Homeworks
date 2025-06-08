@@ -188,10 +188,15 @@ footer .container {
     border-radius: 22px;
     line-height: 30px;
     font-family: "Open Sans", sans-serif;
-    border: none;
+    border: 1px solid #070707;
     font-weight: 700;
     letter-spacing: 0.1125rem;
+}
 
+.btn:hover {
+    background-color: #fff;
+    color: #070707;
+    border: 1px solid #070707;
 }
 
 .button-wrap {
