@@ -1,0 +1,147 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+}
+
+
+
+.container {
+    width: min(90%, 793px);
+    margin-inline: auto;
+    border: 10px solid #fff;
+    outline: solid 1px #cccbcb;
+    margin-top: 10px;
+}
+
+header {
+    text-align: center;
+    color: #ff8984;
+    background-color: #4a4f57;
+    padding: 15px 0;
+}
+
+header hgroup h1 {
+    margin-bottom: 5px;
+}
+
+
+main {
+    background-color: #3b3f45;
+    color: #fff;
+    padding: 20px 0 50px;
+}
+
+.shopping-list {
+    width: min(100%, 534px);
+    margin-inline: auto;
+    margin-bottom: 50px;
+}
+
+.list-item {
+    font-size: 1.125rem;
+    width: 100%;
+    position: relative;
+transition: all .2s ease-in;
+}
+
+.list-item label {
+    display: inline-flex;
+    width: 100%;
+    padding: 12px 10px;
+    align-items: center;
+}
+
+.list-item label input {
+    margin-right: 10px;
+}
+
+.list-item label>span {
+    margin-right: 10px;
+}
+
+.list-item:nth-child(even) {
+    background-color: #77778e;
+}
+
+.list-item:nth-child(odd) {
+    background-color: #88839e;
+}
+
+.list-item:hover {
+    background-color: #635e77;
+}
+
+.list-item:hover::after {
+    content: '';
+    display: block;
+    width: 100%;
+    background-color: #fff;
+    height: 3px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.list-item:hover::before {
+    content: '';
+    display: block;
+    width: 100%;
+    background-color: #fff;
+    height: 3px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.list-item label:has(input:checked) {
+    text-decoration: line-through;
+    background-color: #8d8888;
+}
+
+.list-item label:active {
+    background-color: #ff8984;
+}
+
+.list-item:nth-child(1) label::after {
+    content: ' (for the next lessons about CSS)';
+    font-size: 0.875rem;
+}
+
+.list-item:nth-child(2) label::after {
+    content: '(for more CSS manipulations)';
+    font-size: 0.875rem;
+}
+
+.list-item:nth-child(3) label::after {
+    content: ' (because they are awesome)';
+    font-size: 0.875rem;
+}
+
+.list-item:nth-child(4) label::after {
+    content: ' (hm... they always dissapear)';
+    font-size: 0.875rem;
+}
+
+.list-item:last-child label::after {
+    content: '(For my friends)';
+    font-size: 0.875rem;
+}
+
+
+.last-text {
+    text-align: center;
+    color: #ff8984;
+    width: min(100%, 534px);
+    margin-inline: auto;
+    background-color: #4a4f57;
+    padding: 12px 0;
+}
