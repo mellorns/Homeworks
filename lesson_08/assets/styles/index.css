@@ -4,144 +4,173 @@
     box-sizing: border-box;
 }
 
+
+:root {
+    --bg-main-color: #3B3F45;
+    --bg-secondary-color: #4A4F56;
+    --header-active: #FF8984;
+    --light-gray: #88839E;
+    --purple-dark: #625E77;
+    --checked: #7A7593;
+    --text-checked: #9B96AC;
+}
+
+body {
+    background-color: var(--bg-main-color);
+    font-family: "Roboto", sans-serif;
+}
+
 ul {
     list-style: none;
 }
 
-body {
-    font-family: 'Trebuchet MS', Arial, sans-serif;
-}
-
-
-
 .container {
-    width: min(90%, 793px);
-    margin-inline: auto;
-    border: 10px solid #fff;
-    outline: solid 1px #cccbcb;
-    margin-top: 10px;
+    width: min(90%, 800px);
+    margin: 0 auto;
 }
 
 header {
+    background-color: var(--bg-secondary-color);
     text-align: center;
-    color: #ff8984;
-    background-color: #4a4f57;
-    padding: 15px 0;
-}
+    color: var(--header-active);
+    padding: 23px 15px;
 
-header hgroup h1 {
-    margin-bottom: 5px;
-}
+    h1 {
+        margin-bottom: 6px;
+        font-size: 2.25rem;
+    }
 
+    p {
+        font-size: 1.5rem;
+    }
+
+}
 
 main {
-    background-color: #3b3f45;
-    color: #fff;
-    padding: 20px 0 50px;
+    padding: 40px 20px;
 }
 
-.shopping-list {
-    width: min(100%, 534px);
-    margin-inline: auto;
-    margin-bottom: 50px;
-}
-
-.list-item {
-    font-size: 1.125rem;
-    width: 100%;
-    position: relative;
-transition: all .2s ease-in;
-}
-
-.list-item label {
-    display: inline-flex;
-    width: 100%;
-    padding: 12px 10px;
-    align-items: center;
-}
-
-.list-item label input {
-    margin-right: 10px;
-}
-
-.list-item label>span {
-    margin-right: 10px;
-}
-
-.list-item:nth-child(even) {
-    background-color: #77778e;
-}
-
-.list-item:nth-child(odd) {
-    background-color: #88839e;
-}
-
-.list-item:hover {
-    background-color: #635e77;
-}
-
-.list-item:hover::after {
-    content: '';
-    display: block;
-    width: 100%;
-    background-color: #fff;
-    height: 3px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-}
-
-.list-item:hover::before {
-    content: '';
-    display: block;
-    width: 100%;
-    background-color: #fff;
-    height: 3px;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.list-item label:has(input:checked) {
-    text-decoration: line-through;
-    background-color: #8d8888;
-}
-
-.list-item label:active {
-    background-color: #ff8984;
-}
-
-.list-item:nth-child(1) label::after {
-    content: ' (for the next lessons about CSS)';
-    font-size: 0.875rem;
-}
-
-.list-item:nth-child(2) label::after {
-    content: '(for more CSS manipulations)';
-    font-size: 0.875rem;
-}
-
-.list-item:nth-child(3) label::after {
-    content: ' (because they are awesome)';
-    font-size: 0.875rem;
-}
-
-.list-item:nth-child(4) label::after {
-    content: ' (hm... they always dissapear)';
-    font-size: 0.875rem;
-}
-
-.list-item:last-child label::after {
-    content: '(For my friends)';
-    font-size: 0.875rem;
-}
-
-
-.last-text {
+footer {
     text-align: center;
-    color: #ff8984;
-    width: min(100%, 534px);
-    margin-inline: auto;
-    background-color: #4a4f57;
-    padding: 12px 0;
+    color: var(--header-active);
+    font-size: 1.75rem;
+
+    .container {
+        background-color: var(--bg-secondary-color);
+        padding: 16px 20px;
+    }
+}
+
+.products {
+
+    transition: all 0.2 ease;
+
+    li {
+        background-color: var(--light-gray);
+        font-size: 1.6875rem;
+
+
+        &:nth-child(even) {
+            background-color: var(--purple-dark);
+        }
+
+        input {
+            display: none;
+        }
+
+    }
+
+    input {
+        &:checked+label {
+            background-color: var(--checked);
+            color: var(--text-checked);
+
+            &::after {
+                display: inline-block;
+            }
+
+            span::after {
+                display: inline-block;
+            }
+        }
+    }
+
+    label {
+        display: block;
+        padding: 18px 15px 18px 58px;
+        position: relative;
+        border-top: 3px solid transparent;
+        border-bottom: 3px solid transparent;
+        color: #fff;
+        font-size: 27px;
+        line-height: 32px;
+
+        &::after,
+        &::before {
+            content: '';
+            display: inline-block;
+            position: absolute;
+        }
+
+        &::before {
+            width: 28px;
+            height: 28px;
+            background-color: #fff;
+            left: 20px;
+            top: 15px;
+        }
+
+        &::after {
+            display: none;
+            width: 12px;
+            height: 8px;
+            border-bottom: 2px solid black;
+            border-left: 2px solid black;
+            left: 25px;
+            top: 20px;
+            rotate: -45deg;
+        }
+
+        &:hover {
+            border-color: #fff;
+        }
+
+        &:active {
+            background-color: var(--header-active);
+        }
+
+        small {
+            font-size: 1.0625rem;
+            line-height: 22px;
+            vertical-align: middle;
+            position: relative;
+            top: -2px;
+
+            &::before {
+                content: "("
+            }
+
+            &::after {
+                content: ")"
+            }
+        }
+
+        span {
+            display: inline-block;
+            position: relative;
+
+            &::after {
+                content: "";
+                display: none;
+                width: calc(100% - 6px);
+                height: 2px;
+                background-color: var(--text-checked);
+                position: absolute;
+                top: 16px;
+                left: 0;
+            }
+        }
+
+    }
+
 }

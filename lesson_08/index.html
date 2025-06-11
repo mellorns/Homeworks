@@ -1,71 +1,81 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=display-width, scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/styles/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <title>Lesson 8</title>
 </head>
 
 <body>
-    <div class="container">
-        <header>
-            <hgroup>
-                <h1>
-                    CSS Dinner Shopping List
-                </h1>
-                <p>
-                    Let’s go to the mall!
-                </p>
-            </hgroup>
-        </header>
-        <main>
-            <ul class="shopping-list">
-                <li class="list-item">
-                    <label>
-                        <input type="checkbox" name="tast">
-                        <span> A lot of pickles </span>
-                    </label>
-                </li>
-                <li class="list-item">
-                    <label>
-                        <input type="checkbox" name="tast">
-                        <span>10 apples</span>
-                    </label>
-                </li>
-                <li class="list-item">
-                    <label>
-                        <input type="checkbox" name="tast">
 
-                        <span> 20 oranges</span>
-                    </label>
-                </li>
-                <li class="list-item">
-                    <label>
-                        <input type="checkbox" name="tast">
-                        <span>13 plates</span>
-                    </label>
-                </li>
-                <li class="list-item">
-                    <label>
-                        <input type="checkbox" name="tast">
-                        <span>15 bentos</span>
-                    </label>
-                </li>
-                <li class="list-item">
-                    <label>
-                        <input type="checkbox" name="tast">
-                        <span>1 bottle of Sake</span>
-                    </label>
-                </li>
-            </ul>
-            <div class="last-text">
-                Bon appetit : )
-            </div>
-        </main>
-    </div>
+    <header>
+        <hgroup>
+            <h1>
+                CSS Dinner Shopping List
+            </h1>
+            <p>
+                Let’s go to the mall!
+            </p>
+        </hgroup>
+    </header>
+    <main>
+        <div class="container">
+            <div class="products">
+                <ul class="shopping-list">
+                    <li class="shopping-item">
 
+                        <input type="checkbox" id="prod_1" name="product[]">
+                        <label for="prod_1">
+                            <span>A lot of pickles <small>for the next lessons about CSS</small></span>
+                        </label>
+
+                    </li>
+                    <li>
+                        <input type="checkbox" id="prod_2" name="product[]">
+                        <label for="prod_2">
+                            <span>10 apples <small>for more CSS manipulations</small></span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="prod_3" name="product[]">
+                        <label for="prod_3">
+                            <span>20 oranges <small>because they are awesome</small></span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="prod_4" name="product[]">
+                        <label for="prod_4">
+                            <span>13 plates <small>hm... they always dissapear</small></span>
+                        </label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="prod_5" name="product[]">
+                        <label for="prod_5">
+                            <span>15 bentos</span>
+                        </label>
+
+                    </li>
+                    <li>
+                        <input type="checkbox" id="prod_6" name="product[]">
+                        <label for="prod_6">
+                            <span>1 bottle of Sake <small>for my friends</small></span>
+                        </label>
+
+                    </li>
+                </ul>
+    </main>
+    <footer>
+        <div class="container">
+            <p>Bon appetit :)</p>
+        </div>
+    </footer>
 </body>
 
 </html>
