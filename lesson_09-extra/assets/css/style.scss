@@ -1,0 +1,126 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #3399CC;
+    border: 25px solid #2B81AC;
+    color: #fff;
+    font-size: 1.3125rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.container {
+    width: min(90%, 1170px);
+    margin: 0 auto;
+    padding-top: 66px;
+
+    h1 {
+        margin-bottom: 37px;
+        font-size: 1.3125rem;
+    }
+
+    p:last-of-type {
+        margin-bottom: 30px;
+    }
+
+}
+
+
+.wether-table {
+
+    font-size: 0;
+    margin-bottom: 37px;
+    border: 2px solid #fff;
+    background-color: #fff;
+
+    &:hover .table-item {
+        opacity: .7;
+    }
+
+    .table-item {
+        display: inline-block;
+        width: 100%;
+        font-size: 1.375rem;
+        text-align: center;
+        border: 2px solid #fff;
+        transition: all .1s ease-in;
+
+
+        &:hover {
+            opacity: 1;
+        }
+
+        .content {
+            padding: 26px 0 27px 0;
+
+            div {
+                color: rgba(255, 255, 255, 0.70);
+
+                i {
+                    position: relative;
+                    top: 6px;
+                }
+            }
+        }
+    }
+
+
+    i {
+        font-size: 2.625rem;
+    }
+
+    .big {
+        width: 50%;
+    }
+
+    .small {
+        width: 25%;
+    }
+
+    .blue {
+        background-color: #39C;
+    }
+
+    .salad {
+        background-color: #33CCCC;
+    }
+
+    .dark-purple {
+        background-color: #996699;
+    }
+
+    .red {
+        background-color: #C24747;
+    }
+
+    .orange {
+        background-color: #E2674A;
+    }
+
+    .yellow {
+        background-color: #FFCC66;
+    }
+
+    .light-green {
+        background-color: #99CC99;
+    }
+
+    .mud {
+        background-color: #669999;
+    }
+
+    .ligth-purple {
+        background-color: #CC6699;
+    }
+
+    .green {
+        background-color: #339966;
+    }
+
+    .gray {
+        background-color: #666699;
+    }
+}
