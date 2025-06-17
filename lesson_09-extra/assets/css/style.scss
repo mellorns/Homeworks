@@ -6,7 +6,6 @@
 
 body {
     background-color: #3399CC;
-    border: 25px solid #2B81AC;
     color: #fff;
     font-size: 1.3125rem;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -16,27 +15,27 @@ body {
     width: min(90%, 1170px);
     margin: 0 auto;
     padding-top: 66px;
-
-    h1 {
-        margin-bottom: 37px;
-        font-size: 1.3125rem;
-    }
-
-    p:last-of-type {
-        margin-bottom: 30px;
-    }
-
 }
 
+h1 {
+    margin-bottom: 37px;
+    font-size: 1.3125rem;
+}
+
+p:last-of-type {
+    margin-bottom: 30px;
+}
 
 .wether-table {
 
     font-size: 0;
     margin-bottom: 37px;
-    border: 2px solid #fff;
+    // border: 2px solid #fff;
+    padding: 2px;
     background-color: #fff;
 
-    &:hover .table-item {
+
+    &:hover .table-item:not(:hover) {
         opacity: .7;
     }
 
@@ -45,13 +44,9 @@ body {
         width: 100%;
         font-size: 1.375rem;
         text-align: center;
-        border: 2px solid #fff;
+        // border: 2px solid #fff;
         transition: all .1s ease-in;
-
-
-        &:hover {
-            opacity: 1;
-        }
+        padding: 2px;
 
         .content {
             padding: 26px 0 27px 0;
