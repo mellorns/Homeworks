@@ -1,15 +1,27 @@
+@import "fonts";
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+
+
 body {
     color: #070707;
-    font-family: "Open Sans", sans-serif;
+
+    font-family: "Gilroy-medium";
     text-align: center;
     font-size: 1.125rem;
 }
+
+h2 {
+    margin-bottom: 50px;
+    font-size: 2.125rem;
+    font-family: "Gilroy-bold";
+}
+
 
 img {
     vertical-align: top;
@@ -29,6 +41,7 @@ header nav a {
     text-decoration: none;
     color: #828282;
     font-size: 1.125rem;
+    font-family: "Gilroy-bold";
 }
 
 header nav a:hover {
@@ -74,6 +87,7 @@ header .container {
 .home-section h1 {
     margin-bottom: 50px;
     font-size: 3rem;
+    font-family: "Gilroy-bold";
     text-align: left;
 }
 
@@ -126,6 +140,10 @@ hgroup h2 {
     margin-right: 97px;
 }
 
+.skills-list figcaption {
+     font-family: "Gilroy-bold";
+}
+
 .skills-list figure {
     margin-bottom: 60px;
     color: #828282;
@@ -150,14 +168,11 @@ hgroup h2 {
     background-color: #F6F6F6;
 }
 
-h2 {
-    margin-bottom: 50px;
-    font-size: 2.125rem;
-}
 
 .portfolio-item a {
     text-decoration: underline;
     color: #070707;
+    font-family: "Gilroy-medium";
 }
 
 .portfolio-item img {
@@ -191,6 +206,7 @@ footer .container {
     border: 1px solid #070707;
     font-weight: 700;
     letter-spacing: 0.1125rem;
+    font-family: "Gilroy-bold";
 }
 
 .btn:hover {
