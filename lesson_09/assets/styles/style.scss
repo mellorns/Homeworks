@@ -42,6 +42,10 @@ body {
     gap: 32px;
 }
 
+section {
+    padding: 90px 0;
+}
+
 .btn {
     text-decoration: none;
     cursor: pointer;
@@ -119,15 +123,17 @@ header {
     }
 }
 
-section {
-    padding: 90px 0;
-}
+
 
 
 .hero {
-    display: flex;
-    align-items: center;
-    gap: 60px;
+
+    .container {
+        display: flex;
+        align-items: center;
+        gap: 60px;
+    }
+
 
     hgroup {
         margin-bottom: 30px;
@@ -157,13 +163,8 @@ section {
     padding-top: 0;
     text-align: center;
     position: relative;
+    background: no-repeat url(../images/bg.svg) center bottom/cover;
 
-    svg {
-        position: absolute;
-        top: 115px;
-        left: -85px;
-        z-index: -1;
-    }
 }
 
 .features-content {
