@@ -17,7 +17,7 @@ section {
     }
 
     p {
-        font-family: "PT Sans";
+        font-family: "PT Sans", sans-serif;
         font-weight: 400;
         font-size: 1.75rem;
         line-height: 3rem;
@@ -36,7 +36,7 @@ section .title {
 
     h2 {
 
-        font-family: 'Francois One';
+        font-family: 'Francois One', sans-serif;
         font-size: 2.25rem;
         line-height: 3rem;
         letter-spacing: 0.09rem;
@@ -44,7 +44,7 @@ section .title {
     }
 
     sup {
-        font-family: 'Farro';
+        font-family: 'Farro', sans-serif;
         font-size: 1.175rem;
         letter-spacing: 0.075rem;
 
@@ -63,7 +63,7 @@ header {
 
         div:first-child {
             margin-right: 50px;
-            font-family: 'Tourney';
+            font-family: 'Tourney', sans-serif;
             font-size: 1.375rem;
             line-height: 1.125rem;
             letter-spacing: 0.055rem;
@@ -73,7 +73,7 @@ header {
             margin-right: auto;
             display: flex;
             gap: 10px;
-            font-family: 'Staatliches';
+            font-family: 'Staatliches', sans-serif;
             font-size: 1.375rem;
             letter-spacing: 0.04125rem;
         }
