@@ -1,0 +1,373 @@
+@import 'fonts';
+
+$text-color: #545454;
+$secondary-text-color: #969696;
+$blue-color: #007BFF;
+$border-color: #E4E4E4;
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a,
+button {
+  transition: all .2s ease;
+  text-decoration: none;
+  color: $blue-color;
+
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  vertical-align: top;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.container {
+  width: min(90%, 1200px);
+  margin: 0 auto;
+}
+
+
+body {
+  font-size: 1rem;
+  color: $text-color;
+  font-family: sans-serif;
+  font-size: 0.9375rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.375rem;
+  /* 146.667% */
+  letter-spacing: -0.0125rem;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  main {
+    flex-grow: 1;
+  }
+}
+
+.form-wrap {
+  width: min(90%, 570px);
+  min-height: 590px;
+  margin: 50px auto;
+  padding: 35px 34px 16px 36px;
+  border: 1px solid $border-color;
+  border-radius: 5px;
+
+
+  h2 {
+    margin-bottom: 20px;
+    font-family: "Roboto";
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 2rem;
+    color: #1C1C1C;
+  }
+
+  label {
+    display: inline-block;
+    margin-bottom: 7px;
+    font-family: "Roboto";
+    color: $text-color;
+
+  }
+}
+
+.form-row:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.btn {
+  padding: 8px 10px;
+  min-width: 150px;
+  color: #fff;
+  background-color: $blue-color;
+  display: inline-block;
+  text-align: center;
+  border-radius: 5px;
+  font-family: 'Roboto';
+  font-size: 0.9375rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.375rem;
+  letter-spacing: -0.00625rem;
+  cursor: pointer;
+  text-decoration: none;
+  border: 1px solid $blue-color;
+  outline: 1px solid $border-color;
+
+
+  &:hover {
+    background-color: #3e98f8;
+  }
+
+  &:active {
+    background-color: #fff;
+    color: $blue-color;
+    border: 1px solid $blue-color;
+    box-shadow: 0.3rem 0.3rem 1px $blue-color;
+  }
+
+  &:focus {
+    outline: 3px solid $border-color;
+  }
+
+  &.full {
+    width: 100%;
+  }
+
+}
+
+
+
+
+
+
+input[type=text],
+input[type=email],
+input[type=number],
+input[type=password],
+input[type=tel],
+select {
+  height: 38px;
+  padding: 7px 10px;
+  border-radius: 5px;
+  outline: 1px solid $border-color;
+  border: none;
+  width: 100%;
+
+
+  &:focus {
+    outline: 1px solid $blue-color;
+  }
+}
+
+input[type=radio] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  margin-right: 8px;
+
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid $border-color;
+    border-radius: 50%;
+
+  }
+
+  &:checked::after {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 6px solid $blue-color;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  &+label {
+    margin-bottom: 0px;
+  }
+
+  &:focus {
+    border-radius: 50%;
+  }
+
+}
+
+.inline-flex {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 21px;
+}
+
+input[type=email] {
+  margin-bottom: 7px;
+
+  &+div {
+    color: $secondary-text-color;
+  }
+}
+
+select {
+  appearance: none;
+  background: url(../images/Arrow_Double.svg) right 10px top 10px/ 18px no-repeat;
+  padding-right: 38px;
+}
+
+.select2-container--default .select2-selection--single {
+  height: 38px;
+  border-radius: 5px;
+  outline: 1px solid $border-color;
+  border: none;
+
+  &:focus {
+    outline: 1px solid $blue-color;
+  }
+
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  line-height: 38px;
+  color: $text-color;
+}
+
+.select2-container .select2-selection--single .select2-selection__rendered {
+  padding-left: 10px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__placeholder {
+  color: #bbb;
+}
+
+.select2 .select2-container .select2-container--default .select2-container--below .select2-container--focus {}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  height: 40px;
+  width: 20px;
+  background: url(../images/Arrow_Double.svg) right 5px top 10px/ 18px no-repeat;
+
+  b {
+    display: none;
+  }
+}
+
+
+
+.split {
+  display: flex;
+  gap: 12px;
+
+  &>div {
+    flex-basis: 50%;
+  }
+}
+
+.bottom-text {
+  text-align: center;
+  color: #969696;
+  font-family: 'Roboto';
+  font-size: 0.8125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.125rem;
+  letter-spacing: -0.00625rem;
+  padding: 0 10px;
+  max-width: 410px;
+  margin-inline: auto;
+  margin-bottom: 20px;
+}
+
+.str-line {
+  width: 100%;
+  height: 1px;
+  background-color: $border-color;
+}
+
+.log-in {
+  text-align: center;
+  margin-left: -20px;
+
+  &>span {
+    margin-right: 20px;
+  }
+}
+
+.profile-photo-container {
+  display: flex;
+  gap: 20px;
+
+  .img-wrap {
+    flex-basis: 102px;
+  }
+
+
+  .info-text {
+    color: $secondary-text-color;
+    color: #969696;
+    font-family: 'Roboto';
+    font-size: 0.8125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.125rem;
+    /* 138.462% */
+    letter-spacing: -0.00625rem;
+  }
+
+  .upload-file {
+    flex-basis: 44%;
+
+
+    .delete-btn {
+      border: 1px solid $border-color;
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      padding: 7px;
+      border-radius: 3px;
+      background: url(../images/Trash.svg) center center/ 16px no-repeat;
+      cursor: pointer;
+      position: relative;
+      top: -19px;
+    }
+  }
+}
+
+
+.fake-file {
+  display: inline-block;
+  height: 30px;
+  padding: 0px 10px;
+  border-radius: 5px;
+  outline: 1px solid $border-color;
+  border: none;
+  width: 100%;
+  position: relative;
+  margin-top: 11px;
+  margin-bottom: 9px;
+  margin-right: 10px;
+  width: 138px;
+  background: url(../images/Photo_Camera.svg) right 10px center/ 16px no-repeat;
+
+
+  input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    font-size: 0.8125rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.125rem;
+  }
+
+}

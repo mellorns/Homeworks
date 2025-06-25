@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="assets/plagins/select2/css/select2.min.css">
+  <link rel="stylesheet" href="assets/css/style.min.css">
+</head>
+
+<body>
+  <div class="page-wrapper">
+    <header></header>
+    <main>
+
+      <div class="form-wrap">
+        <form action="#" enctype="multipart/form-data">
+
+          <h2>Profile</h2>
+          <div class="form-row">
+            <div class="profile-photo-container">
+              <div class="img-wrap">
+                <img class="profile-photo" src="assets/images/Image.png">
+              </div>
+              <div class="upload-file">
+                <div class="fake-file">
+                  <div class="file-name"></div>
+                  <input type="file">
+                </div>
+
+                <input class="delete-btn" type="button"></button>
+
+                <div class="info-text">
+                  Up to 1 MB (300x300 px)
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="form-row split">
+            <div>
+              <label for="fname">Name</label>
+              <input type="text" id="p-fname" name="fname">
+            </div>
+
+            <div>
+              <label for="email">Email</label>
+              <input type="text" id="p-email" name="email">
+            </div>
+          </div>
+          <div class="form-row split">
+
+            <div>
+              <label for="country">Country</label>
+              <select name="country" id="country" class="js-example-basic-multiple">
+                <option value="" selected disabled hidden></option>
+                <option value="ukraine">Ukraine</option>
+                <option value="france">France</option>
+                <option value="usa">USA</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="city">City</label>
+              <input type="text" name="city" id="p-city">
+            </div>
+          </div>
+          <div class="form-row split">
+            <div>
+              <label for="zcode">Zip code</label>
+              <input type="text" id="p-zcode" name="zcode">
+            </div>
+
+            <div>
+              <label for="pnumber">Phone number</label>
+              <input type="tel" id="p-pnumber" name="pnumber">
+            </div>
+          </div>
+          <div class="form-row">
+            <button class="btn " type="submit">Update</button>
+          </div>
+
+        </form>
+      </div>
+    </main>
+    <footer></footer>
+
+    <script src="assets/js/jquery-3.7.1.js"></script>
+    <script src="assets/plagins/select2/js/select2.full.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $('.js-example-basic-multiple').select2({
+          minimumResultsForSearch: Infinity,
+          placeholder: "Select",
+
+        })
+
+      });
+    </script>
+</body>
+
+</html>
