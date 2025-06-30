@@ -226,28 +226,28 @@ footer {
   .footer-soc {
     display: flex;
     gap: 10px;
-  }
 
-  a {
-    display: inline-block;
-    width: 38px;
-    height: 38px;
-    background-color: #EFEEF3;
-    border-radius: 5px;
-    position: relative;
-    padding: 9px;
 
-    svg {
-      width: 20px;
-      height: 20px;
+    a {
+      display: inline-block;
+      width: 38px;
+      height: 38px;
+      background-color: #EFEEF3;
+      border-radius: 5px;
+      position: relative;
+      padding: 9px;
+
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+
+      &:hover svg * {
+        fill: $green-color;
+        transition: all .3s ease-in-out;
+      }
+
     }
-
-    &:hover svg * {
-      fill: $green-color;
-      transition: all .3s ease-in-out;
-    }
-
   }
-
 
 }
