@@ -240,11 +240,14 @@ footer {
       svg {
         width: 20px;
         height: 20px;
+
+        * {
+          transition: all .3s ease-in-out;
+        }
       }
 
       &:hover svg * {
         fill: $green-color;
-        transition: all .3s ease-in-out;
       }
 
     }
