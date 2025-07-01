@@ -30,7 +30,7 @@ section {
         margin-bottom: 33px;
     }
 
-    // &:target::before {
+    // &:target::before:not(:first-child) {
     //     content: "";
     //     display: block;
     //     height: 150px;
@@ -210,22 +210,5 @@ section.react-fundamentals {
         text-decoration: none;
         color: #000;
     }
-
-    li:hover {
-
-        // animation: appearBorder 0.4s ease forwards;
-
-    }
-
-    @keyframes appearBorder {
-        0% {
-            transform: scaleX(0);
-        }
-
-        100% {
-            transform: scaleX(1);
-        }
-    }
-
 
 }
