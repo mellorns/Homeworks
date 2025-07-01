@@ -11,7 +11,9 @@
     margin: 0 auto;
 }
 
+
 section {
+
     &:not(:last-child) {
         margin-bottom: 56px;
     }
@@ -27,12 +29,25 @@ section {
     p:not(:last-child) {
         margin-bottom: 33px;
     }
+
+    // &:target::before {
+    //     content: "";
+    //     display: block;
+    //     height: 150px;
+    //     /* fixed header height*/
+    //     margin: -60px 0 0;
+    //     /* negative fixed header height */
+    // }
 }
 
 section .title {
-    display: flex;
-    gap: 10px;
+
     margin-bottom: 40px;
+
+    .title-name {
+        display: flex;
+        gap: 10px;
+    }
 
     h2 {
 
@@ -47,19 +62,32 @@ section .title {
         font-family: 'Farro', sans-serif;
         font-size: 1.175rem;
         letter-spacing: 0.075rem;
-
     }
+
+    .divider {
+        display: inline-block;
+        width: 100px;
+        height: 8px;
+        background-color: #000;
+    }
+
+
 
 }
 
 header {
-    padding: 13px 0;
+    position: fixed;
+    height: 80px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: #fff;
 
     .container {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 70px;
+        padding: 26px 5px;
 
         div:first-child {
             margin-right: 50px;
@@ -79,6 +107,45 @@ header {
         }
     }
 
+
+
+    .header-nav {
+
+        a {
+            color: #000;
+            text-decoration: none;
+            position: relative;
+        }
+
+        a::after {
+            content: '';
+
+            height: 1px;
+            width: 100%;
+            opacity: 0;
+            background-color: #000;
+            display: inline-block;
+            position: absolute;
+            bottom: 1px;
+            left: 0;
+            transition: all .4s ease-in-out;
+        }
+
+
+        a:hover::after {
+            opacity: 1;
+        }
+    }
+
+}
+
+
+main {
+    padding-top: 150px;
+    background-image: url(../images/bg-picture.svg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: right 103px;
 }
 
 
@@ -99,4 +166,66 @@ section.react-fundamentals {
     .merked-text {
         background-color: #dadada;
     }
+}
+
+.grid-box {
+    display: grid;
+    grid-template-columns: 385px 1fr;
+    gap: 30px;
+    width: min(90%, 1200px);
+    margin: 0 auto;
+
+}
+
+
+.sidebar {
+
+    position: sticky;
+    top: 150px;
+
+    ul {
+        list-style: none;
+    }
+
+    li {
+        font-family: "Francois One";
+        font-size: 2.25rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 3rem;
+        /* 133.333% */
+        letter-spacing: 0.09rem;
+        text-transform: uppercase;
+        border-bottom: 1px solid #BDBDBD;
+        transition: all 1s ease-in-out;
+
+    }
+
+    li+li {
+        margin-top: 70px;
+    }
+
+    a {
+        display: block;
+        text-decoration: none;
+        color: #000;
+    }
+
+    li:hover {
+
+        // animation: appearBorder 0.4s ease forwards;
+
+    }
+
+    @keyframes appearBorder {
+        0% {
+            transform: scaleX(0);
+        }
+
+        100% {
+            transform: scaleX(1);
+        }
+    }
+
+
 }
