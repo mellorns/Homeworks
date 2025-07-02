@@ -12,7 +12,12 @@
 }
 
 
+html {
+    scroll-behavior: smooth
+}
+
 section {
+
 
     scroll-margin-top: 140px;
 
@@ -148,6 +153,7 @@ main {
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: right 103px;
+
 }
 
 
