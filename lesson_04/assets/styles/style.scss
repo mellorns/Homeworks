@@ -25,6 +25,8 @@ h2 {
 
 img {
     vertical-align: top;
+    width: 100%;
+    height: 100%;
 }
 
 ul {
@@ -37,6 +39,14 @@ ul {
     height: auto;
 }
 
+.portfolio-small-img {
+    display: none;
+}
+
+header {
+    position: relative;
+}
+
 header nav a {
     text-decoration: none;
     color: #828282;
@@ -47,6 +57,13 @@ header nav a {
 header nav a:hover {
     color: #070707;
     text-shadow: 1px 0 1px #070707, 0 1px 1px #070707, -1px 0 1px #070707, 0 -1px 1px #070707;
+}
+
+
+.burger-menu {
+    width: 33px;
+    height: 20px;
+    display: none;
 }
 
 .active {
@@ -82,13 +99,43 @@ header .container {
 
 .home-section {
     padding-top: 12px;
+
+
+    .title {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        height: 120px;
+        margin-bottom: 30px;
+    }
+
+    .position {
+        max-width: 145px;
+        font-family: 'Gilroy-Medium;';
+        font-size: 1.125rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .lang-box {
+        transform: rotate(270deg);
+        position: relative;
+        right: -22px;
+        bottom: 22px;
+        color: #070707;
+
+    }
+
+    .lang-inactive {
+        color: #828282;
+    }
 }
 
 .home-section h1 {
-    margin-bottom: 50px;
     font-size: 3rem;
     font-family: "Gilroy-bold";
-    text-align: left;
+    max-width: 123px;
 }
 
 #about_me {
@@ -126,35 +173,58 @@ hgroup h2 {
 }
 
 .skills-list {
-    font-size: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    gap: 90px;
 }
 
 .skills-list li {
-    display: inline-block;
     font-size: 0.875rem;
     width: 170px;
     margin-left: -1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.skills-list li:not(:last-child) {
-    margin-right: 97px;
-}
+// .skills-list li:not(:last-child) {
+//     margin-right: 97px;
+// }
+
 
 .skills-list figcaption {
-     font-family: "Gilroy-bold";
+    font-family: "Gilroy-bold";
+
+    max-width: 79px;
 }
 
 .skills-list figure {
     margin-bottom: 60px;
     color: #828282;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .skills-list figure img {
     margin-bottom: 25px;
+
+
+    width: 89px;
+    height: 89px;
+
 }
 
 .skills-list li:last-child {
     margin-right: 0;
+}
+
+.stars {
+    display: flex;
+
+
 }
 
 .gray-star {
@@ -254,4 +324,66 @@ footer hgroup {
 .footer-last-text {
     color: #828282;
     font-size: 0.875rem;
+}
+
+
+
+@media screen and (max-width: 600px) {
+    .portfolio-img {
+        display: none;
+    }
+
+    .portfolio-small-img {
+        display: block;
+    }
+
+    .main-menu {
+        display: none;
+    }
+
+    .burger-menu {
+        display: block;
+        position: absolute;
+        right: 30px;
+        top: 68px;
+    }
+
+    header .container {
+        border-bottom: none;
+    }
+
+    .home-section h1 {
+        max-width: 124px;
+    }
+
+    .skills-list {
+        justify-content: center;
+    }
+
+    .home-section {
+       
+
+        .title {
+             height: auto;
+            flex-direction: column;
+            align-items: start;
+            margin-bottom: 36px;
+        }
+        h1 {
+            margin-bottom: 23px;
+        }
+    }
+
+    .lang-box {
+        display: none;
+    }
+
+
+}
+
+@media screen and (max-width: 1100px) {
+    .skills-list {
+        flex-wrap: wrap;
+        gap: 80px;
+    }
 }
