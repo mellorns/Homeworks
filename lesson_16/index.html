@@ -16,7 +16,9 @@
       <div class="logo">
         <a href="#">
           <div class="logo-wrap">
-            <img src="assets/images/logo.svg" alt="Logo">
+            <img class="lazy"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+              data-src="assets/images/logo.svg" alt="Logo" class="lazy">
           </div>
         </a>
       </div>
@@ -61,7 +63,9 @@
       <div class="container">
         <div class="logo-wrap">
           <a href="#">
-            <img src="assets/images/logo.svg" title="Logo">
+            <img class="lazy"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+              data-src="assets/images/logo.svg" title="Logo">
           </a>
         </div>
         <nav class="main-menu">
@@ -108,7 +112,9 @@
       </div>
     </header>
     <main>
-      <section class="hero">
+      <section class="hero lazy"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+        data-bg="assets/images/569c297b138acbeee3fb7c532ab829b75133c557.jpg">
         <h1>
           Manifest is a newborn theme.
 
@@ -123,7 +129,9 @@
           <div class="blog-list">
             <div class="blog-item">
               <div class="img-wrap">
-                <img src="assets/images/arrow-img.jpg">
+                <img class="lazy"
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                  data-src="assets/images/arrow-img.jpg">
               </div>
               <div class="content">
                 <hgroup>
@@ -143,7 +151,9 @@
             </div>
             <div class="blog-item">
               <div class="img-wrap">
-                <img src="assets/images/569c297b138acbeee3fb7c532ab829b75133c557.jpg">
+                <img class="lazy"
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                  data-src="assets/images/569c297b138acbeee3fb7c532ab829b75133c557.jpg">
               </div>
               <div class="content">
                 <hgroup>
@@ -182,7 +192,9 @@
               <div class="post-img">
                 <a href="#">
                   <div class="img-wrap">
-                    <img src="assets/images/lamp-small.png">
+                    <img class="lazy"
+                      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                      data-src="assets/images/lamp-small.png" title="Interface Design">
                   </div>
                 </a>
               </div>
@@ -207,7 +219,9 @@
               <div class="post-img">
                 <a href="#">
                   <div class="img-wrap">
-                    <img src="assets/images/arrow-bright.png">
+                    <img class="lazy"
+                      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                      data-src="assets/images/arrow-bright.png" title="Technology">
                   </div>
                 </a>
               </div>
@@ -232,7 +246,9 @@
               <div class="post-img">
                 <a href="#">
                   <div class="img-wrap">
-                    <img src="assets/images/roof-bright.png">
+                    <img class="lazy"
+                      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                      data-src="assets/images/roof-bright.png" title="Interface Design">
                   </div>
                 </a>
               </div>
@@ -271,7 +287,9 @@
             <div class="post-item">
               <a href="#">
                 <div class="img-wrap">
-                  <img src="assets/images/lamp2-light.png">
+                  <img class="lazy"
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                    data-src="assets/images/lamp2-light.png" title="Interface Design">
                 </div>
               </a>
               <hgroup>
@@ -292,7 +310,9 @@
             <div class="post-item">
               <a href="#">
                 <div class="img-wrap">
-                  <img src="assets/images/wall-light.png">
+                  <img class="lazy"
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                    data-src="assets/images/wall-light.png" title="Visual Design">
                 </div>
               </a>
               <hgroup>
@@ -388,10 +408,14 @@
         </div>
     </footer>
   </div>
+  <script src="assets/js/lazyload.min.js">
+  </script>
 
   <script>
-
+    var lazyLoadInstance = new LazyLoad();
     const toggleMenu = () => document.body.classList.toggle('open-menu')
+
+
 
   </script>
 </body>
