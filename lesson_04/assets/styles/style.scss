@@ -29,6 +29,17 @@ img {
     height: 100%;
 }
 
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100dvh;
+
+    main {
+        flex-grow: 1;
+    }
+}
+
 ul {
     list-style: none;
 }
@@ -81,19 +92,114 @@ header .container {
 }
 
 .main-menu ul {
-    font-size: 0;
+    display: flex;
+    justify-content: space-between;
 }
 
-.main-menu ul li {
-    display: inline-block;
-}
-
-.main-menu ul li {
-    display: inline-block;
-}
 
 .main-menu ul li:not(:last-child) {
     margin-right: 40px;
+}
+
+.mobile-menu-panel {
+    width: 100%;
+    background-color: #fff;
+    height: 100dvh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
+    transition: all .5s ease;
+    z-index: 100;
+    overflow: auto;
+
+
+    .close {
+
+        position: relative;
+        top: 0;
+        right: 20px;
+        width: 30px;
+        height: 30px;
+
+
+        &::before {
+            content: '';
+            display: inline-block;
+            width: 30px;
+            height: 3px;
+            background-color: #070707;
+            position: absolute;
+            transform: rotate(45deg);
+        }
+
+        &::after {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            width: 30px;
+            height: 3px;
+            background-color: #070707;
+            transform: rotate(-45deg);
+        }
+
+    }
+
+    .lang-box {
+        position: absolute;
+        right: 0;
+        transform: rotate(90deg);
+        font-size: 2.125rem;
+        color: #070707;
+
+    }
+
+    .lang-inactive {
+        color: #828282;
+    }
+
+    .monile-menu {
+        padding: 66px 26px;
+        text-align: left;
+
+        li:not(:last-child) {
+            margin-bottom: 38px;
+        }
+
+        a {
+            text-decoration: none;
+            display: inline-block;
+            width: 80%;
+            padding: 20px;
+            font-family: "Gilroy-Bold";
+            font-size: 2.125rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            color: #828282;
+
+            &:active {
+                color: #090909;
+            }
+
+            // &:hover {
+            //     background-color: #070707;
+            //     color: #fff;
+            // }
+        }
+    }
+
+}
+
+.open-menu {
+    .mobile-menu-panel {
+        transform: translateX(0);
+    }
+}
+
+.burger {
+    background-color: transparent;
+    border: none;
 }
 
 
@@ -258,11 +364,6 @@ hgroup h2 {
 }
 
 
-footer .container {
-    width: min(90%, 310px)
-}
-
-
 .btn {
     display: inline-block;
     min-width: 80px;
@@ -289,10 +390,17 @@ footer .container {
     margin-bottom: 40px;
 }
 
+footer {
+    .container {
+        width: min(90%, 340px);
+    }
+}
+
 
 .footer-navigation {
-    font-size: 0;
-    margin-bottom: 60px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 45px;
 }
 
 .footer-navigation li {
@@ -324,18 +432,15 @@ footer hgroup {
 .footer-last-text {
     color: #828282;
     font-size: 0.875rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
 }
 
 
 
 @media screen and (max-width: 600px) {
-    .portfolio-img {
-        display: none;
-    }
-
-    .portfolio-small-img {
-        display: block;
-    }
 
     .main-menu {
         display: none;
@@ -361,14 +466,15 @@ footer hgroup {
     }
 
     .home-section {
-       
+
 
         .title {
-             height: auto;
+            height: auto;
             flex-direction: column;
             align-items: start;
             margin-bottom: 36px;
         }
+
         h1 {
             margin-bottom: 23px;
         }
@@ -379,6 +485,28 @@ footer hgroup {
     }
 
 
+    .footer-navigation {
+        margin-bottom: 48px;
+    }
+
+    .footer-navigation li+li {
+        margin-left: 34px;
+    }
+
+    footer {
+        .btn {
+            width: 100%;
+        }
+
+    }
+
+    .mobile-menu-panel {
+        .lang-box {
+            display: block;
+        }
+    }
+
+
 }
 
 @media screen and (max-width: 1100px) {
@@ -386,4 +514,6 @@ footer hgroup {
         flex-wrap: wrap;
         gap: 80px;
     }
+
+
 }
