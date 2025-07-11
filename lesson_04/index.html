@@ -10,195 +10,229 @@
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <nav class="main-menu">
-                <ul>
-                    <li><a href="#home" class="active">Home</a></li>
-                    <li><a href="#about_me">About me</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Contacts</a></li>
-                </ul>
-            </nav>
-            <div class="burger-menu">
-                <img src="assets/images/Group_3.svg">
-            </div>
+
+    <div class="mobile-menu-panel">
+        <nav class="monile-menu">
+            <ul>
+                <li><a href="#home" class="active">Home</a>
+                    <button class="burger close" onclick="toggleMenu()"></button>
+                </li>
+                <li><a href="#about_me">About me</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Contacts</a></li>
+            </ul>
+        </nav>
+        <div class="lang-box">
+            <span class="lang-inactive">RU</span> | <span>ENG</span>
         </div>
-    </header>
-    <main>
-        <section class="home-section">
+    </div>
+    <div class="page-wrapper">
+        <header>
             <div class="container">
-                <div class="title">
-                    <h1>Denis Novik</h1>
+                <nav class="main-menu">
+                    <ul>
+                        <li><a href="#home" class="active">Home</a></li>
+                        <li><a href="#about_me">About me</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#">Portfolio</a></li>
+                        <li><a href="#">Contacts</a></li>
+                    </ul>
+                </nav>
+                <div class="burger-menu">
 
-                    <div class="position">
-                        UX | UI designer
-                        24 years old, Minsk
-                    </div>
-                    <div class="lang-box">
-                        <span class="lang-inactive">RU</span> | <span>ENG</span>
-                    </div>
-                </div>
-
-
-                <div class="img-wrap">
-                    <img src="assets/images/main_photo.jpg" alt="Profile photo" class="portfolio-img">
-                    <img src="assets/images/BSPP2266.png" alt="Profile photo" class='portfolio-small-img'>
-                </div>
-
-            </div>
-        </section>
-        <section id="about_me">
-            <div class="container">
-                <h2>
-                    About me
-                </h2>
-                <div class="content">
-                    <p>
-                        Hi, I'm Denis – UX/UI designer from Minsk.
-                        I'm interested in design and everything connected with it.
-                    </p>
-                    <p>I'm studying at courses "Web and mobile design
-                        interfaces" in IT-Academy.</p>
-                    <p>Ready to implement excellent projects
-                        with wonderful people.</p>
+                    <button class="burger" onclick="toggleMenu()">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                            class="lazy" data-src="assets/images/Group_3.svg">
+                    </button>
                 </div>
             </div>
-        </section>
-        <section id="skills">
+        </header>
+        <main>
+            <section class="home-section">
+                <div class="container">
+                    <div class="title">
+                        <h1>Denis Novik</h1>
+
+                        <div class="position">
+                            UX | UI designer
+                            24 years old, Minsk
+                        </div>
+                        <div class="lang-box">
+                            <span class="lang-inactive">RU</span> | <span>ENG</span>
+                        </div>
+                    </div>
+                    <picture>
+                        <source
+                            srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                            data-srcset="assets/images/BSPP2266.png" media="(width <= 600px)">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                            data-src="assets/images/main_photo.jpg" alt="Profile photo" class="portfolio-im lazy">
+                    </picture>
+
+                </div>
+            </section>
+            <section id="about_me">
+                <div class="container">
+                    <h2>
+                        About me
+                    </h2>
+                    <div class="content">
+                        <p>
+                            Hi, I'm Denis – UX/UI designer from Minsk.
+                            I'm interested in design and everything connected with it.
+                        </p>
+                        <p>I'm studying at courses "Web and mobile design
+                            interfaces" in IT-Academy.</p>
+                        <p>Ready to implement excellent projects
+                            with wonderful people.</p>
+                    </div>
+                </div>
+            </section>
+            <section id="skills">
+                <div class="container">
+                    <hgroup>
+                        <h2>Skills</h2>
+                        <p>I work in such programs as</p>
+                    </hgroup>
+                    <ul class="skills-list">
+                        <li>
+                            <figure>
+                                <img src="assets/images/Ps.svg" alt="Photoshop">
+                                <figcaption>Adobe Photoshop</figcaption>
+                            </figure>
+                            <div class="stars">
+                                <img src="assets/images/star-icon.svg" alt="Star">
+                                <img src="assets/images/star-icon.svg" alt="Star">
+                                <img src="assets/images/star-icon.svg" class="gray-star" alt="Star">
+                                <img src="assets/images/star-icon.svg" class="gray-star" alt="Star">
+                                <img src="assets/images/star-icon.svg" class="gray-star" alt="Star">
+                            </div>
+                        </li>
+                        <li>
+                            <figure>
+                                <img src="assets/images/Ai.svg" alt="Adobe Illustrato">
+                                <figcaption>Adobe Illustrator</figcaption>
+                            </figure>
+                            <div class="stars">
+                                <img src="assets/images/star-icon.svg" alt="Star">
+                                <img src="assets/images/star-icon.svg" alt="Star">
+                                <img src="assets/images/star-icon.svg" alt="Star">
+                                <img src="assets/images/star-icon.svg" class="gray-star" alt="Star">
+                                <img src="assets/images/star-icon.svg" class="gray-star" alt="Star">
+                            </div>
+                        </li>
+                        <li>
+                            <figure>
+                                <img src="assets/images/Ae.svg" alt="Adobe After Effects">
+                                <figcaption>Adobe After Effects</figcaption>
+                            </figure>
+                            <div class="stars">
+                                <img src="assets/images/star-icon.svg" alt="Star">
+                                <img src="assets/images/star-icon.svg" alt="Star">
+                                <img src="assets/images/star-icon.svg" alt="Star">
+                                <img src="assets/images/star-icon.svg" alt="Star">
+                                <img src="assets/images/star-icon.svg" class="gray-star" alt="Star">
+                            </div>
+                        </li>
+                        <li>
+                            <figure>
+                                <img src="assets/images/Figma.svg" alt="Figma">
+                                <figcaption>Figma</figcaption>
+                            </figure>
+                            <div class="stars">
+                                <img src="assets/images/star-icon.svg" alt="Star">
+                                <img src="assets/images/star-icon.svg" alt="Star">
+                                <img src="assets/images/star-icon.svg" alt="Star">
+                                <img src="assets/images/star-icon.svg" alt="Star">
+                                <img src="assets/images/star-icon.svg" alt="Star">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section id="portfolio">
+                <div class="container">
+                    <h2>
+                        Portfolio
+                    </h2>
+
+                    <div class="portfolio-item">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                            data-src="assets/images/Fashion-Store.jpg" alt="Fashion Store" class="lazy">
+                        <div>
+                            <a href="#" rel="noreferrer nofollow" target="_blank">
+                                Online ashion store - Homepage
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <div class="portfolio-item">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                            data-src="assets/images/reebok_web.jpg" alt="Reebok Web" class="lazy">
+                        <div>
+                            <a href="#" rel="noreferrer nofollow" target="_blank">
+                                Reebok Store - Concept
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="portfolio-item">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                            data-src="assets/images/braun-landing.jpg" alt="Braun Landing" class="lazy">
+                        <div>
+                            <a href="#" rel="noreferrer nofollow" target="_blank">
+                                Braun Landing Page - Concept
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+        <footer>
             <div class="container">
                 <hgroup>
-                    <h2>Skills</h2>
-                    <p>I work in such programs as</p>
+                    <h2>
+                        Contacts
+                    </h2>
+                    <p>Want to know more or just chat?
+                        You are welcome!</p>
                 </hgroup>
-                <ul class="skills-list">
+
+                <div class="button-wrap">
+                    <a href="mailto:example@gmail.com" class="btn">Send message</a>
+                </div>
+                <ul class="footer-navigation">
                     <li>
-                        <figure>
-                            <img src="assets/images/Ps.svg" alt="Photoshop">
-                            <figcaption>Adobe Photoshop</figcaption>
-                        </figure>
-                        <div class="stars">
-                            <img src="assets/images/star-icon.svg" alt="Star">
-                            <img src="assets/images/star-icon.svg" alt="Star">
-                            <img src="assets/images/star-icon.svg" class="gray-star" alt="Star">
-                            <img src="assets/images/star-icon.svg" class="gray-star" alt="Star">
-                            <img src="assets/images/star-icon.svg" class="gray-star" alt="Star">
-                        </div>
+                        <a href="#" target="_blank"><img src="assets/images/linkedin.svg" alt="Linkedin"></a>
                     </li>
                     <li>
-                        <figure>
-                            <img src="assets/images/Ai.svg" alt="Adobe Illustrato">
-                            <figcaption>Adobe Illustrator</figcaption>
-                        </figure>
-                        <div class="stars">
-                            <img src="assets/images/star-icon.svg" alt="Star">
-                            <img src="assets/images/star-icon.svg" alt="Star">
-                            <img src="assets/images/star-icon.svg" alt="Star">
-                            <img src="assets/images/star-icon.svg" class="gray-star" alt="Star">
-                            <img src="assets/images/star-icon.svg" class="gray-star" alt="Star">
-                        </div>
+                        <a href="#" target="_blank"><img src="assets/images/instagram.svg" alt="Instagram"></a>
                     </li>
                     <li>
-                        <figure>
-                            <img src="assets/images/Ae.svg" alt="Adobe After Effects">
-                            <figcaption>Adobe After Effects</figcaption>
-                        </figure>
-                        <div class="stars">
-                            <img src="assets/images/star-icon.svg" alt="Star">
-                            <img src="assets/images/star-icon.svg" alt="Star">
-                            <img src="assets/images/star-icon.svg" alt="Star">
-                            <img src="assets/images/star-icon.svg" alt="Star">
-                            <img src="assets/images/star-icon.svg" class="gray-star" alt="Star">
-                        </div>
+                        <a href="#" target="_blank"><img src="assets/images/behance.svg" alt="Beahace"></a>
                     </li>
                     <li>
-                        <figure>
-                            <img src="assets/images/Figma.svg" alt="Figma">
-                            <figcaption>Figma</figcaption>
-                        </figure>
-                        <div class="stars">
-                            <img src="assets/images/star-icon.svg" alt="Star">
-                            <img src="assets/images/star-icon.svg" alt="Star">
-                            <img src="assets/images/star-icon.svg" alt="Star">
-                            <img src="assets/images/star-icon.svg" alt="Star">
-                            <img src="assets/images/star-icon.svg" alt="Star">
-                        </div>
+                        <a href="#" target="_blank"><img src="assets/images/dribbble.svg" alt="Dribble"></a>
                     </li>
                 </ul>
+
+                <p class="footer-last-text">
+                    <span>Like me on</span>
+                    <span>LinkedIn, Instagram, Behance, Dribble</span>
+                </p>
             </div>
-        </section>
-        <section id="portfolio">
-            <div class="container">
-                <h2>
-                    Portfolio
-                </h2>
+        </footer>
+    </div>
+    <script src="assets/js/lazyload.min.js"></script>
 
-                <div class="portfolio-item">
-                    <img src="assets/images/Fashion-Store.jpg" alt="Fashion Store">
-                    <div>
-                        <a href="#" rel="noreferrer nofollow" target="_blank">
-                            Online ashion store - Homepage
-                        </a>
-                    </div>
-                </div>
+    <script>
+        const toggleMenu = () => document.body.classList.toggle('open-menu')
 
-
-                <div class="portfolio-item">
-                    <img src="assets/images/reebok_web.jpg" alt="Reebok Web">
-                    <div>
-                        <a href="#" rel="noreferrer nofollow" target="_blank">
-                            Reebok Store - Concept
-                        </a>
-                    </div>
-
-                </div>
-                <div class="portfolio-item">
-                    <img src="assets/images/braun-landing.jpg" alt="Braun Landing">
-                    <div>
-                        <a href="#" rel="noreferrer nofollow" target="_blank">
-                            Braun Landing Page - Concept
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-    </main>
-    <footer>
-        <div class="container">
-            <hgroup>
-                <h2>
-                    Contacts
-                </h2>
-                <p>Want to know more or just chat?
-                    You are welcome!</p>
-            </hgroup>
-
-            <div class="button-wrap">
-                <a href="mailto:example@gmail.com" class="btn">Send message</a>
-            </div>
-            <ul class="footer-navigation">
-                <li>
-                    <a href="#" target="_blank"><img src="assets/images/linkedin.svg" alt="Linkedin"></a>
-                </li>
-                <li>
-                    <a href="#" target="_blank"><img src="assets/images/instagram.svg" alt="Instagram"></a>
-                </li>
-                <li>
-                    <a href="#" target="_blank"><img src="assets/images/behance.svg" alt="Beahace"></a>
-                </li>
-                <li>
-                    <a href="#" target="_blank"><img src="assets/images/dribbble.svg" alt="Dribble"></a>
-                </li>
-            </ul>
-
-            <p class="footer-last-text">
-                Like me on
-                LinkedIn, Instagram, Behance, Dribble
-            </p>
-        </div>
-    </footer>
+        var lazyLoadInstance = new LazyLoad();
+    </script>
 </body>
 
 
