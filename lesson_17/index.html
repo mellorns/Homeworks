@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="assets/css/style.min.css">
+</head>
+
+<body>
+	<div class="main-layout">
+
+
+		<aside class="sidebar">
+			<div class="sidebar-top">
+				<a href='#' class="sidebar-logo">
+					<div class="logo-wrap">
+						<img src="assets/images/logo.svg" alt="Logo">
+					</div>
+					<span class="logo-title">LightBoard</span>
+				</a>
+				<button class="close" onclick="toggleMenu()">
+				</button>
+			</div>
+			<div class="dashboard">
+				<div class="svg-container">
+					<svg>
+						<use xlink:href="assets/images/sprite.svg#dashboard"></use>
+					</svg>
+				</div>
+				<span>
+					Dashboard
+				</span>
+			</div>
+			<nav class="sidebar-navigation">
+
+				<h3>Apps</h3>
+
+				<ul>
+					<li>
+						<a href="#">
+							<div class="svg-container notification-icon-green">
+								<svg>
+									<use xlink:href="assets/images/sprite.svg#mail"></use>
+								</svg>
+							</div>
+
+							<span class="link-title">Email</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="svg-container notification-icon-red">
+
+								<svg>
+									<use xlink:href="assets/images/sprite.svg#bubble"></use>
+								</svg>
+							</div>
+							<span class="link-title">Chats</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="svg-container notification-icon-yellow">
+
+								<svg>
+									<use xlink:href="assets/images/sprite.svg#calendar"></use>
+								</svg>
+							</div>
+							<span class="link-title">Calendar</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="svg-container">
+
+								<svg>
+									<use xlink:href="assets/images/sprite.svg#news"></use>
+								</svg>
+							</div>
+							<span class="link-title">News</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="svg-container">
+
+								<svg>
+									<use xlink:href="assets/images/sprite.svg#study_1"></use>
+								</svg>
+							</div>
+							<span class="link-title">Knowledge</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="svg-container">
+
+								<svg>
+									<use xlink:href="assets/images/sprite.svg#stack"></use>
+								</svg>
+							</div>
+							<div class="link-title">File manager</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="svg-container">
+								<svg>
+									<use xlink:href="assets/images/sprite.svg#location"></use>
+								</svg>
+							</div>
+							<div class="link-title">Leaflet Maps</div>
+						</a>
+					</li>
+				</ul>
+				<h3>Auth pages</h3>
+				<ul>
+					<li>
+						<a href="#">
+							<div class="svg-container">
+
+								<svg>
+									<use xlink:href="assets/images/sprite.svg#profile"></use>
+								</svg>
+							</div>
+							<span class="link-title">Profile</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="svg-container">
+
+								<svg>
+									<use xlink:href="assets/images/sprite.svg#lock"></use>
+								</svg>
+							</div>
+							<span class="link-title">Permissions</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="svg-container">
+
+								<svg>
+									<use xlink:href="assets/images/sprite.svg#log-out"></use>
+								</svg>
+							</div>
+							<span class="link-title">Log Out</span>
+						</a>
+					</li>
+				</ul>
+				<h3>User Interface</h3>
+				<ul>
+					<li>
+						<a href="#">
+							<div class="svg-container">
+
+								<svg>
+									<use xlink:href="assets/images/sprite.svg#eye"></use>
+								</svg>
+							</div>
+							<span class="link-title">Feather</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="svg-container">
+
+								<svg>
+									<use xlink:href="assets/images/sprite.svg#wallet"></use>
+								</svg>
+							</div>
+							<span class="link-title">Ecommerce</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="svg-container">
+
+								<svg>
+									<use xlink:href="assets/images/sprite.svg#lab"></use>
+								</svg>
+							</div>
+							<span class="link-title">Components</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="svg-container">
+
+								<svg>
+									<use xlink:href="assets/images/sprite.svg#page"></use>
+								</svg>
+							</div>
+							<span class="link-title">Pages</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="svg-container">
+
+								<svg>
+									<use xlink:href="assets/images/sprite.svg#pen"></use>
+								</svg>
+							</div>
+							<span class="link-title">Editor</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</aside>
+
+		<div class="page-wrapper">
+
+			<header>
+
+				<div class="container">
+					<ul class="header-nav">
+						<li>
+							<a href="#">
+								<svg>
+									<use xlink:href="assets/images/sprite.svg#mail"></use>
+								</svg>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<svg>
+									<use xlink:href="assets/images/sprite.svg#bubble"></use>
+								</svg>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<svg>
+									<use xlink:href="assets/images/sprite.svg#calendar"></use>
+								</svg>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<svg>
+									<use xlink:href="assets/images/sprite.svg#star"></use>
+								</svg>
+							</a>
+						</li>
+					</ul>
+
+
+					<div class="right-panel">
+						<div class="lang-box">
+							<a href="#">
+								<img src="assets/images/lang-icon.png" alt="">
+							</a>
+							<span>English</span>
+						</div>
+
+						<ul class="tools">
+							<li>
+								<a href="#">
+									<svg>
+										<use xlink:href="assets/images/sprite.svg#change-theme"></use>
+									</svg>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<svg>
+										<use xlink:href="assets/images/sprite.svg#search"></use>
+									</svg>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<svg>
+										<use xlink:href="assets/images/sprite.svg#set"></use>
+									</svg>
+								</a>
+							</li>
+						</ul>
+						<div class="profile-mini active">
+							<a href="#">
+								<img src="assets/images/profile_mini.png" alt="Profile photo">
+							</a>
+						</div>
+
+					</div>
+				</div>
+			</header>
+			<main>
+			</main>
+			<footer></footer>
+		</div>
+
+
+	</div>
+
+
+	<script>
+		let toggleMenu = () => {
+			document.body.classList.toggle('toggle-menu')
+
+		}
+	</script>
+</body>
+
+</html>
