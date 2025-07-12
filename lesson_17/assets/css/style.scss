@@ -18,6 +18,11 @@ ol {
   list-style: none;
 }
 
+html,
+body {
+  height: 100%;
+}
+
 a,
 button {
   transition: all .2s ease;
@@ -51,6 +56,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  min-height: 0;
 
 
   main {
@@ -66,8 +72,9 @@ body {
 .main-layout {
   display: grid;
   grid-template-columns: 220px 1fr;
-  min-height: 100dvh;
   transition: all .5s ease-in-out;
+  min-height: 0;
+
 
   svg * {
     fill: #4F4F4F;
@@ -77,15 +84,13 @@ body {
 
 .sidebar {
   padding-top: 30px;
-  overflow-y: auto;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
-
+  overflow: auto;
 
   svg {
     width: 26px;
     height: 26px;
   }
-
 
 
   .dashboard {
@@ -178,7 +183,8 @@ body {
     font-family: 'Montserrat';
     text-transform: uppercase;
     color: $text-gray-middle;
-
+    min-width: 200px;
+    overflow: hidden;
   }
 
   ul {
@@ -213,6 +219,11 @@ body {
       align-items: center;
       gap: 20px;
 
+    }
+
+    .link-title {
+      min-width: 110px;
+      overflow: hidden;
     }
 
 
@@ -270,7 +281,7 @@ body {
   h3 {
     font-size: 0;
     line-height: 1.25rem;
-
+    min-width: auto;
 
     &::after {
       content: '';
