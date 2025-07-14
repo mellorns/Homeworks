@@ -1,3 +1,5 @@
+@use 'fonts';
+
 $text-color: #565656;
 
 *,
@@ -62,22 +64,19 @@ header {
   }
 
   .logo-wrap {
-    height: 24px;
-
-    img {
-      object-fit: contain;
-    }
+    margin-top: 5px;
   }
 }
 
 
 h1 {
-  margin-bottom: 70px;
+  margin-bottom: 56px;
   font-family: "Red Hat Display";
-  font-size: 3rem;
+  font-size: clamp(1.875rem, 3.33vw, 3rem);
   font-weight: 600;
   line-height: 4rem;
   letter-spacing: 0.15rem;
+  color: #000;
 }
 
 .main-section {
@@ -96,8 +95,9 @@ article {
     font-weight: 600;
     line-height: 2.905rem;
     letter-spacing: 0.175rem;
+    color: #000;
 
-    margin-bottom: 50px;
+    margin-bottom: 43px;
   }
 
   p {
@@ -123,7 +123,7 @@ article {
   }
 
   .article-text {
-    padding-right: 53%;
+    padding-right: 50%;
   }
 
 }
@@ -147,18 +147,23 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
   }
 
   .footer-text {
     h4 {
-      margin-bottom: 30px;
+      margin-bottom: 27px;
 
       font-family: "Red Hat Display";
       font-size: 3rem;
       line-height: 4rem;
       letter-spacing: 0.15rem;
+      color: #000;
     }
+
+     .phone-number {
+      margin-bottom: 12px;
+     }
 
     .phone-number,
     .email {
@@ -204,8 +209,28 @@ footer {
         transition: all .3s ease-in-out;
       }
 
-
     }
 
+  }
+}
+
+@media screen and (max-width: 900px) {
+
+  .first-article .article-text {
+    padding-right: 0;
+  }
+
+  footer .footer-content {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 40px;
+    margin-bottom: 40px;
+
+
+    h4 {
+      font-size: 2rem;
+      letter-spacing: 0.1rem;
+    }
   }
 }

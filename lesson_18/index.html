@@ -25,12 +25,16 @@
           <h1>AI Fashion Platform</h1>
           <article class="first-article">
             <div class="img-wrap">
-              <img src="assets/images/image-1-big.jpg" alt="Img">
+              <picture>
+                <source data-srcset="assets/images/image-1-sm.webp 1x, assets/images/image-1-sm@2x.webp 2x" type="image/webp" media="(max-width: 400px)">
+                <source data-srcset="assets/images/image-1-md.webp 1x, assets/images/image-1-md@2x.webp 2x" type="image/webp" media="(max-width: 999px)">
+                <source data-srcset="assets/images/image-1-lg.webp 1x, assets/images/image-1-lg@2x.webp 2x" type="image/webp">
+                <img class="lazy" data-src="assets/images/image-1-big.jpg" alt="Img" data-sizes="100w">
+              </picture>
             </div>
             <h3>
               Project Overview
             </h3>
-
             <div class="article-text">
               <p>
                 FashHanger is a bespoke sustainable high-fashion accessory company based out of Berlin, currently
@@ -43,14 +47,18 @@
                 every stage of the buyer’s journey.
               </p>
             </div>
-
           </article>
           <article>
             <h3>
               User Research and Personas
             </h3>
             <div class="img-wrap">
-              <img src="assets/images/image-2-big.jpg" alt="Img">
+              <picture>
+                <source data-srcset="assets/images/image-2-sm.webp 1x, assets/images/image-2-sm@2x.webp 2x" type="image/webp" media="(max-width: 400px)">
+                <source data-srcset="assets/images/image-2-md.webp 1x, assets/images/image-2-md@2x.webp 2x" type="image/webp" media="(max-width: 999px)">
+                <source data-srcset="assets/images/image-2-lg.webp 1x, assets/images/image-2-lg@2x.webp 2x" type="image/webp">
+                <img class="lazy" data-src="assets/images/image-2-big.jpg" alt="Img">
+              </picture>
             </div>
             <div class="article-text">
               <p>
@@ -69,7 +77,12 @@
               Initial Sketches
             </h3>
             <div class="img-wrap">
-              <img src="assets/images/image-3-big.jpg" alt="Img">
+              <picture>
+                <source data-srcset="assets/images/image-3-sm.webp 1x, assets/images/image-3-sm@2x.webp 2x" type="image/webp" media="(max-width: 400px)">
+                <source data-srcset="assets/images/image-3-md.webp 1x, assets/images/image-3-md@2x.webp 2x" type="image/webp" media="(max-width: 999px)">
+                <source data-srcset="assets/images/image-3-lg.webp 1x, assets/images/image-3-lg@2x.webp 2x">
+                <img class="lazy" data-src="assets/images/image-3-big.jpg" alt="Img">
+              </picture>
             </div>
             <div class="article-text">
               <p>
@@ -87,7 +100,12 @@
               Final Design
             </h3>
             <div class="img-wrap">
-              <img src="assets/images/image-3-big.jpg" alt="Img">
+              <picture>
+                <source data-srcset="assets/images/image-4-sm.webp 1x, assets/images/image-4-sm@2x.webp 2x" type="image/webp" media="(max-width:400px)">
+                <source data-srcset="assets/images/image-4-md.webp 1x, assets/images/image-4-md@2x.webp 2x" type="image/webp" media="(max-width:999px)">
+                <source data-srcset="assets/images/image-4-lg.webp 1x, assets/images/image-4-lg@2x.webp 2x">
+                <img class="lazy" data-src="assets/images/image-4-big.jpg" alt="Img">
+              </picture>
             </div>
             <div class="article-text">
               <p>
@@ -150,6 +168,12 @@
 
     </footer>
   </div>
+
+  <script src="assets/js/lazyload.min.js"></script>
+  <script>
+    var lazyLoadInstance = new LazyLoad();
+
+  </script>
 </body>
 
 </html>
