@@ -62,8 +62,7 @@ body {
   main {
     flex-grow: 1;
 
-    background: url(../images/bg.png) no-repeat;
-    background-size: contain;
+    background: url(../images/bg.png) /cover no-repeat;
 
   }
 }
@@ -85,6 +84,7 @@ body {
 .sidebar {
   padding-top: 30px;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
+  height: 100dvh;
   overflow: auto;
 
   svg {
@@ -92,6 +92,7 @@ body {
     height: 26px;
   }
 
+  
 
   .dashboard {
     display: flex;
