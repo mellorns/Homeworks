@@ -312,21 +312,14 @@ h3 {
     gap: 30px;
     align-items: center;
 
-    &>div {
-      flex: 1;
-      align-self: stretch;
+    >div {
+      width: 50%;
     }
   }
 
-  .img-wrap {
-    max-width: 570px;
-    aspect-ratio: 1.2;
-    background-color: $grey-color-700;
-  }
 
   .content {
-    max-width: 450px;
-    padding: 85px 0;
+    padding-right: 20%;
 
     hgroup {
       margin-bottom: 40px;
@@ -644,8 +637,12 @@ footer {
 
 
     .blog-item {
-      flex-basis: 50%;
+
       gap: 20px;
+
+      .content {
+        padding-right: 0;
+      }
     }
   }
 
@@ -713,7 +710,8 @@ footer {
     width: 175px;
     height: auto;
   }
-.right-menu {
+
+  .right-menu {
     gap: 20px;
   }
 
@@ -729,7 +727,12 @@ footer {
   .blog .blog-item,
   .blog .blog-list div+div {
     flex-direction: column-reverse;
+
+    &>div {
+      width: auto;
+    }
   }
+
 
   .hero {
     background-image: url(../images/hero-bg-small.png);
