@@ -41,7 +41,7 @@ img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .container {
@@ -85,7 +85,7 @@ header {
   width: 100%;
   background-color: rgba(255, 255, 255, 0.02);
   -webkit-backdrop-filter: blur(4.5px);
-          backdrop-filter: blur(4.5px);
+  backdrop-filter: blur(4.5px);
 
 
   .container {
@@ -100,63 +100,7 @@ header {
     align-items: center;
   }
 
-  // .rigth-header {
-  //   position: relative;
-  // }
 
-  .theme-changer-wrap {
-
-    position: absolute;
-    right: 20px;
-    top: 28px;
-
-    input[type=checkbox][role=switch] {
-      width: 60px;
-      height: 30px;
-      -webkit-appearance: none;
-         -moz-appearance: none;
-              appearance: none;
-      position: relative;
-
-      &::before {
-        content: '';
-        display: inline-block;
-        width: 60px;
-        height: 30px;
-        border-radius: 15px;
-        // background-color: #E4E4E4;
-        background-color: rgba(255, 255, 255, 0.488);
-        position: absolute;
-
-      }
-
-      &::after {
-        content: '';
-        display: inline-block;
-        width: 25px;
-        height: 25px;
-        border-radius: 50%;
-        background-color: #262a3fce;
-        position: absolute;
-        top: 2px;
-        left: 2px;
-        outline: 1px solid transparent;
-      }
-
-      &:checked {
-
-        &::before {
-          background-color: #262A3F;
-        }
-
-        &::after {
-          left: 33px;
-          outline: 1px solid rgba(255, 255, 255, 0.488);
-        }
-      }
-    }
-
-  }
 
   .main-menu ul {
     display: flex;
@@ -175,7 +119,6 @@ header {
       letter-spacing: 0.067rem;
       color: $primary-dark-blue;
       text-decoration: none;
-      // border: 1px solid transparent;
       position: relative;
 
       &:hover::after {
@@ -199,6 +142,58 @@ header {
   }
 }
 
+.theme-changer-wrap {
+
+  position: absolute;
+  right: 20px;
+  top: 3px;
+
+  input[type=checkbox][role=switch] {
+    width: 60px;
+    height: 30px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: relative;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 60px;
+      height: 30px;
+      border-radius: 15px;
+      background-color: rgba(255, 255, 255, 0.488);
+      position: absolute;
+
+    }
+
+    &::after {
+      content: '';
+      display: inline-block;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background-color: #262a3fce;
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      outline: 1px solid transparent;
+    }
+
+    &:checked {
+
+      &::before {
+        background-color: #262A3F;
+      }
+
+      &::after {
+        left: 33px;
+        outline: 1px solid rgba(255, 255, 255, 0.488);
+      }
+    }
+  }
+
+}
 
 .mobile-menu-panel {
   position: fixed;
@@ -213,9 +208,11 @@ header {
 
   background-color: rgba(255, 255, 255, 0.02);
   -webkit-backdrop-filter: blur(4.5px);
-          backdrop-filter: blur(4.5px);
+  backdrop-filter: blur(4.5px);
 
-
+.theme-changer-wrap {
+  position: static;
+}
 
 
   .mm-top {
@@ -497,7 +494,7 @@ main {
       grid-template-columns: 1fr 1fr;
       row-gap: 90px;
       -moz-column-gap: 30px;
-           column-gap: 30px;
+      column-gap: 30px;
     }
 
     .benefits-list-item {
@@ -1250,9 +1247,11 @@ footer {
 
   .main-menu {
     display: none;
+
+
   }
 
-  .theme-changer-wrap {
+  .rigth-header .theme-changer-wrap {
     display: none;
   }
 
@@ -1606,7 +1605,7 @@ footer {
       opacity: .7;
 
       &:hover {
-          opacity: 1;
+        opacity: 1;
       }
     }
   }
