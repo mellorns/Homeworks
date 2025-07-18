@@ -1603,6 +1603,11 @@ footer {
 
     * a {
       color: #fff;
+      opacity: .7;
+
+      &:hover {
+          opacity: 1;
+      }
     }
   }
 }
