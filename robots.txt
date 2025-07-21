@@ -1,0 +1,8 @@
+User-Agent: *
+
+Disallow: /
+
+
+Sitemap: https://mellorns.github.io/Homeworks/sitemap.xml
+
+Host: mellorns.github.io/Homeworks
