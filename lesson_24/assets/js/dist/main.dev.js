@@ -19,7 +19,7 @@ function countFiles() {
   var sizeUSB = 1024;
   var sizeFile = 820;
   var sizeUserUSB = +prompt("Enter your USB memory");
-  var res2 = Math.floor(sizeUserUSB / sizeFile);
+  var res2 = Math.floor(sizeUserUSB * sizeUSB / sizeFile);
   document.getElementById("task1").value = res2;
 } // Користувач вводить суму грошей в гаманці і ціну однієї шоколадки. 
 // Програма виводить скільки шоколадок може купити користувач і скільки здачі у нього залишиться.

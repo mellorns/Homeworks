@@ -29,7 +29,7 @@ function countFiles() {
 
     const sizeUserUSB = +prompt("Enter your USB memory")
 
-    const res2 = Math.floor(sizeUserUSB / sizeFile)
+    const res2 = Math.floor(sizeUserUSB * sizeUSB / sizeFile)
 
     document.getElementById("task1").value = res2
 
