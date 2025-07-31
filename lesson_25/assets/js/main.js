@@ -295,7 +295,7 @@ function isEven(num) {
 // Зацикли відображення днів тижня таким чином: «День тижня. Хочеш побачити наступний день? » і так до тих пір, поки користувач натискає OK.
 
 
-function seeNextDay() {
+function seemonthDays() {
 
 
     const monday = 'Monday';
@@ -418,5 +418,91 @@ function multNumberTable() {
     }
 
     outputElem.innerHTML = res
+
+}
+
+// Запитай дату (день, місяць, рік) і виведи наступну за нею дату. 
+// Враховуй можливість переходу на наступний місяць, рік, а також високосний рік.
+
+function nextDate() {
+    const outputElem = document.getElementById('task12')
+
+
+    const userDay = +prompt("Enter your day")
+    const userMonth = +prompt("Enter your month")
+    const userYear = +prompt("Enter your year")
+
+
+    let monthDays;
+    let nextDay;
+    let nextMonth;
+    let nextYear;
+
+
+    switch (userMonth) {
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12:
+            monthDays = 31
+            break
+        case 4:
+        case 6:
+        case 9:
+        case 11:
+            monthDays = 30
+            break
+        case 2:
+            if (leapYear(userYear)) {
+                monthDays = 29
+            } else {
+                monthDays = 28
+            }
+            break
+    }
+
+    if (userDay > monthDays) {
+        alert("Invalid days in a month")
+        return
+    }
+
+    if (userDay === monthDays) {
+        nextDay = 1
+        nextMonth = userMonth + 1
+        nextYear = userYear
+        if (nextMonth > 12) {
+            nextMonth = 1
+            nextYear = userYear + 1
+        }
+    } else {
+        nextDay = userDay + 1
+        nextMonth = userMonth
+        nextYear = userYear
+    }
+
+
+    if (nextDay < 10) {
+        nextDay = '0' + nextDay
+    }
+    if (nextMonth < 10) {
+        nextMonth = '0' + nextMonth
+    }
+
+
+    outputElem.innerText = `${nextDay}.${nextMonth}.${nextYear}`
+}
+
+
+function leapYear(year) {
+
+    if (year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0)) {
+        return true
+    } else {
+        return false
+    }
+
 
 }
