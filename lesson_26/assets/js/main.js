@@ -15,7 +15,7 @@ const someFunc3 = () => {
 
 
 function getOutputElem(id) {
-    return document.getElementById(`${id}`)
+    return document.getElementById(id)
 }
 
 
@@ -28,7 +28,7 @@ function getNumbers(amount) {
         arr[i] = +prompt(`Enter a number`)
     }
 
-    return arr.length = 1  ?  arr[0] : arr
+    return arr.length === 1  ?  arr[0] : arr
 
 }
 

@@ -16,7 +16,7 @@ var someFunc2 = function someFunc2() {};
 var someFunc3 = function someFunc3() {};
 
 function getOutputElem(id) {
-  return document.getElementById("".concat(id));
+  return document.getElementById(id);
 }
 
 function getNumbers(amount) {
@@ -26,7 +26,7 @@ function getNumbers(amount) {
     arr[i] = +prompt("Enter a number");
   }
 
-  return arr.length = 1 ? arr[0] : arr;
+  return arr.length === 1 ? arr[0] : arr;
 } // Створи функцію, яка буде виводити кількість переданих їй аргументів.
 
 
