@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="assets/styles/index.css" rel="stylesheet" type="text/css">
+	<title>Lesson 23</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+
+	<style>
+		.grid {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			gap: 20px;
+			border: 1px solid #ddd
+		}
+
+		.grid>div {
+			padding: 20px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		ul {
+			list-style: none;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="container">
+
+		<div class="card mb-4">
+			<div class="row g-0">
+				<div class="col-md-8">
+					<div class="card-body">
+						<h5 class="card-title">Task 1</h5>
+						<p class="card-text"></p>
+						<button type="button" class="btn btn-primary" onclick="car.showProperties()">Показати
+							характеристики машини</button>
+						<button type="button" class="btn btn-primary" onclick="car.addDriver()">Додати водія</button>
+						<button type="button" class="btn btn-primary" onclick="car.countTimeToPoint()">Розрахувати час
+							та паливо до точки</button>
+					</div>
+				</div>
+				<div class="col p-4">
+					<h5 class="card-title">Output</h5>
+					<p class="card-text"> <output id="task1"></output></p>
+				</div>
+			</div>
+			<ul id="car-propetries">
+			</ul>
+		</div>
+		<div class="card mb-4">
+			<div class="row g-0">
+				<div class="col-md-8">
+					<div class="card-body">
+						<h5 class="card-title">Task 2</h5>
+						<p class="card-text"></p>
+						<button type="button" class="btn btn-primary" onclick="showTime(time)">Показати час</button>
+						<button type="button" class="btn btn-primary" onclick="askAddShowSeconds()">Додати секунд</button>
+						<button type="button" class="btn btn-primary" onclick="askAddShowMinutes()">Додати хвилин</button>
+						<button type="button" class="btn btn-primary" onclick="askAddShowHours()">Додати годин</button>
+					</div>
+				</div>
+				<div class="col p-4">
+					<h5 class="card-title">Output</h5>
+					<p class="card-text"> <output id="task2"></output></p>
+				</div>
+			</div>
+			<ul id="car-propetries">
+			</ul>
+		</div>
+
+
+
+	</div>
+	<script src="assets/js/main.js"></script>
+	<script>
+	</script>
+</body>
+
+</html>
