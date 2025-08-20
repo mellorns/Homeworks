@@ -1,5 +1,13 @@
 "use strict";
 
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
+
+function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 // Створи об'єкт, що описує автомобіль (виробник, модель, рік випуску, середня швидкість, обсяг паливного баку, середня витрата палива на 100 км., водії),
@@ -137,11 +145,25 @@ function askAddShowHours() {
 // 5) Скорочення об'єкта-дробу.
 
 
+var fractional1 = document.getElementById('fractional1');
+var fractional2 = document.getElementById('fractional2');
+var fractional3 = document.getElementById('fractional3');
+var fractional4 = document.getElementById('fractional4');
+var outputElem = document.getElementById('task3');
 var drob = {
   numerator: 1,
   denominator: 1
 };
 var operateDrob = {
+  getNumbers: function getNumbers() {
+    return [{
+      numerator: +fractional1.value,
+      denominator: +fractional2.value
+    }, {
+      numerator: +fractional3.value,
+      denominator: +fractional4.value
+    }];
+  },
   mutualDivider: function mutualDivider(num1, num2) {
     var maxNumber = num1 > num2 ? num1 : num2;
     var minDivider = maxNumber;
@@ -156,24 +178,49 @@ var operateDrob = {
 
     return minDivider;
   },
-  sumDrobs: function sumDrobs(oper1, oper2) {
+  showResult: function showResult(func) {
+    var res = func();
+    outputElem.innerText = res.toFixed(3);
+  },
+  sumDrobs: function sumDrobs() {
+    var _this$getNumbers = this.getNumbers(),
+        _this$getNumbers2 = _slicedToArray(_this$getNumbers, 2),
+        oper1 = _this$getNumbers2[0],
+        oper2 = _this$getNumbers2[1];
+
     var minDivider = this.mutualDivider(oper1.denominator, oper2.denominator);
     var firstMult = minDivider / oper1.denominator;
     var secondMult = minDivider / oper2.denominator;
     var sum = (oper1.numerator * firstMult + oper2.numerator * secondMult) / minDivider;
+    console.log(sum);
     return sum;
   },
-  subtraction: function subtraction(oper1, oper2) {
+  subtraction: function subtraction() {
+    var _this$getNumbers3 = this.getNumbers(),
+        _this$getNumbers4 = _slicedToArray(_this$getNumbers3, 2),
+        oper1 = _this$getNumbers4[0],
+        oper2 = _this$getNumbers4[1];
+
     var minDivider = this.mutualDivider(oper1.denominator, oper2.denominator);
     var firstMult = minDivider / oper1.denominator;
     var secondMult = minDivider / oper2.denominator;
     var sum = (oper1.numerator * firstMult - oper2.numerator * secondMult) / minDivider;
     return sum;
   },
-  multiplication: function multiplication(oper1, oper2) {
+  multiplication: function multiplication() {
+    var _this$getNumbers5 = this.getNumbers(),
+        _this$getNumbers6 = _slicedToArray(_this$getNumbers5, 2),
+        oper1 = _this$getNumbers6[0],
+        oper2 = _this$getNumbers6[1];
+
     return oper1.numerator * oper2.numerator / (oper1.denominator * oper2.denominator);
   },
-  division: function division(oper1, oper2) {
+  division: function division() {
+    var _this$getNumbers7 = this.getNumbers(),
+        _this$getNumbers8 = _slicedToArray(_this$getNumbers7, 2),
+        oper1 = _this$getNumbers8[0],
+        oper2 = _this$getNumbers8[1];
+
     return oper1.numerator * oper2.denominator / (oper1.denominator * oper2.numerator);
   },
   reduction: function reduction(oper) {
@@ -191,3 +238,5 @@ var operateDrob = {
     };
   }
 }; // console.log(operateDrob.reduction({ numerator: 3, denominator: 6 }, { numerator: 2, denominator: 1 }));
+
+console.log(operateDrob.getNumbers());

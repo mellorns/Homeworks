@@ -157,6 +157,13 @@ function askAddShowHours() {
 // 4) Ділення 2-х об'єктів-дробів.
 // 5) Скорочення об'єкта-дробу.
 
+
+const fractional1 = document.getElementById('fractional1')
+const fractional2 = document.getElementById('fractional2')
+const fractional3 = document.getElementById('fractional3')
+const fractional4 = document.getElementById('fractional4')
+const outputElem = document.getElementById('task3')
+
 const drob = {
     numerator: 1,
     denominator: 1,
@@ -164,6 +171,11 @@ const drob = {
 
 
 const operateDrob = {
+
+    getNumbers() {
+        return [{ numerator: +fractional1.value, denominator: +fractional2.value },
+        { numerator: +fractional3.value, denominator: +fractional4.value }]
+    },
 
     mutualDivider(num1, num2) {
         const maxNumber = num1 > num2 ? num1 : num2
@@ -179,7 +191,17 @@ const operateDrob = {
         return minDivider
     },
 
-    sumDrobs(oper1, oper2) {
+
+    showResult(func) {
+
+        const res = func()
+
+        outputElem.innerText = res.toFixed(3)
+    },
+
+    sumDrobs() {
+
+        const [oper1, oper2] = this.getNumbers()
 
         const minDivider = this.mutualDivider(oper1.denominator, oper2.denominator)
 
@@ -188,10 +210,14 @@ const operateDrob = {
 
         const sum = (oper1.numerator * firstMult + oper2.numerator * secondMult) / minDivider
 
+        console.log(sum)
+
+
         return sum
     },
 
-    subtraction(oper1, oper2) {
+    subtraction() {
+        const [oper1, oper2] = this.getNumbers()
 
         const minDivider = this.mutualDivider(oper1.denominator, oper2.denominator)
 
@@ -202,11 +228,13 @@ const operateDrob = {
 
         return sum
     },
-    multiplication(oper1, oper2) {
+    multiplication() {
+        const [oper1, oper2] = this.getNumbers()
         return (oper1.numerator * oper2.numerator) / (oper1.denominator * oper2.denominator)
     },
 
-    division(oper1, oper2) {
+    division() {
+        const [oper1, oper2] = this.getNumbers()
         return (oper1.numerator * oper2.denominator) / (oper1.denominator * oper2.numerator)
     },
 
@@ -232,3 +260,4 @@ const operateDrob = {
 
 // console.log(operateDrob.reduction({ numerator: 3, denominator: 6 }, { numerator: 2, denominator: 1 }));
 
+console.log(operateDrob.getNumbers());
