@@ -210,9 +210,6 @@ const operateDrob = {
 
         const sum = (oper1.numerator * firstMult + oper2.numerator * secondMult) / minDivider
 
-        console.log(sum)
-
-
         return sum
     },
 
@@ -260,4 +257,3 @@ const operateDrob = {
 
 // console.log(operateDrob.reduction({ numerator: 3, denominator: 6 }, { numerator: 2, denominator: 1 }));
 
-console.log(operateDrob.getNumbers());

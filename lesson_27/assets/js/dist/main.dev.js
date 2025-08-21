@@ -192,7 +192,6 @@ var operateDrob = {
     var firstMult = minDivider / oper1.denominator;
     var secondMult = minDivider / oper2.denominator;
     var sum = (oper1.numerator * firstMult + oper2.numerator * secondMult) / minDivider;
-    console.log(sum);
     return sum;
   },
   subtraction: function subtraction() {
@@ -238,5 +237,3 @@ var operateDrob = {
     };
   }
 }; // console.log(operateDrob.reduction({ numerator: 3, denominator: 6 }, { numerator: 2, denominator: 1 }));
-
-console.log(operateDrob.getNumbers());

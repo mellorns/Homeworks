@@ -1,0 +1,35 @@
+.modal-window {
+    width: 400px;
+    height: 300px;
+    background-color: aliceblue;
+    border: 1px solid darkcyan;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    transition: all .2s ease-in-out;
+
+
+
+    .close-modal {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        border-radius: 10px;
+        border: none;
+
+        &:hover {
+            background-color: azure;
+            cursor: pointer;
+        }
+    }
+
+    &.is-open {
+        visibility: visible;
+    }
+}
