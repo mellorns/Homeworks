@@ -82,10 +82,15 @@ fillTheTable(table, users);
 function sortTable(th, arr) {
   var res = [];
 
-  if (cashTable.length) {
+  if (th.dataset.sorted && cashTable.length) {
     res = cashTable.reverse();
   } else {
     var sortBy = th.dataset.sort;
+
+    if (cashTable.length) {
+      arr = cashTable;
+    }
+
     res = arr.toSorted(function (a, b) {
       switch (_typeof(a[sortBy])) {
         case 'number':
@@ -98,6 +103,7 @@ function sortTable(th, arr) {
   }
 
   cashTable = res;
+  th.dataset.sorted = true;
   fillTheTable(table, res);
 }
 

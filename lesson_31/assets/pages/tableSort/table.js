@@ -42,12 +42,16 @@ function sortTable(th, arr) {
 
     let res = []
 
-    if (cashTable.length) {
+    if (th.dataset.sorted && cashTable.length) {
 
         res = cashTable.reverse()
 
     } else {
         let sortBy = th.dataset.sort
+
+        if (cashTable.length) {
+            arr = cashTable
+        }
 
         res = arr.toSorted((a, b) => {
 
@@ -60,6 +64,8 @@ function sortTable(th, arr) {
         })
     }
     cashTable = res
+
+    th.dataset.sorted = true
 
     fillTheTable(table, res)
 }
