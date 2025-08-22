@@ -1,0 +1,23 @@
+#block {
+    width: 300px;
+    height: 200px;
+    background-color: antiquewhite;
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+
+
+    #drag_point {
+        width: 20px;
+        height: 20px;
+        background-color: aquamarine;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        cursor: pointer;
+    }
+}
