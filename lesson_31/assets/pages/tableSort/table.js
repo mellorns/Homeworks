@@ -34,41 +34,8 @@ function fillTheTable(table, arr) {
     }
 }
 
-let cashTable = []
 
-fillTheTable(table, users)
 
-function sortTable(th, arr) {
-
-    let res = []
-
-    if (th.dataset.sorted && cashTable.length) {
-
-        res = cashTable.reverse()
-
-    } else {
-        let sortBy = th.dataset.sort
-
-        if (cashTable.length) {
-            arr = cashTable
-        }
-
-        res = arr.toSorted((a, b) => {
-
-            switch (typeof a[sortBy]) {
-                case 'number':
-                    return b[sortBy] - a[sortBy]
-                case 'string':
-                    return -1
-            }
-        })
-    }
-    cashTable = res
-
-    th.dataset.sorted = true
-
-    fillTheTable(table, res)
-}
 
 table.addEventListener('click', function (e) {
 
@@ -78,6 +45,81 @@ table.addEventListener('click', function (e) {
 
     if (!table.contains(th)) return
 
-    sortTable(th, users)
+    mySortTable(th)
 
 })
+
+fillTheTable(table, users)
+
+function mySortTable(th) {
+
+    let direction = 'asc'
+    let switching = true
+    table = document.getElementById('users_table')
+    let sortBy = th.dataset.sort
+    let n = th.dataset.n
+    let switchingCount = 0
+    let i
+    let toSort
+    let rows
+
+
+    while (switching) {
+        switching = false
+        toSort = false
+        rows = table.rows
+
+        switch (sortBy) {
+            case 'id':
+            case 'age':
+                for (i = 1; i < rows.length - 1; i++) {
+                    const x = (rows[i].getElementsByTagName('TD')[n])
+                    const y = (rows[i + 1].getElementsByTagName('TD')[n])
+
+                    if (direction === 'asc') {
+                        if (x.innerHTML - y.innerHTML > 0) {
+                            toSort = true
+                            break
+                        }
+                    } else if (direction === 'dsc') {
+                        if (y.innerHTML - x.innerHTML > 0) {
+                            toSort = true
+                            break
+                        }
+                    }
+                }
+                break
+            case 'name':
+            case 'email':
+                for (i = 1; i < rows.length - 1; i++) {
+                    const x = (rows[i].getElementsByTagName('TD')[n])
+                    const y = (rows[i + 1].getElementsByTagName('TD')[n])
+
+                    if (direction === 'asc') {
+                        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                            toSort = true
+                            break
+                        }
+                    } else if (direction === 'dsc') {
+                        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                            toSort = true
+                            break
+                        }
+
+                    }
+                }
+                break
+        }
+
+        if (toSort) {
+            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+            switching = true
+            switchingCount++
+        } else {
+            if (direction === 'asc' && switchingCount === 0) {
+                direction = 'dsc'
+                switching = true
+            }
+        }
+    }
+}

@@ -1,7 +1,5 @@
 "use strict";
 
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
 var users = [{
   id: 1,
   name: "Alice Johnson",
@@ -76,40 +74,83 @@ function fillTheTable(table, arr) {
   }
 }
 
-var cashTable = [];
-fillTheTable(table, users);
-
-function sortTable(th, arr) {
-  var res = [];
-
-  if (th.dataset.sorted && cashTable.length) {
-    res = cashTable.reverse();
-  } else {
-    var sortBy = th.dataset.sort;
-
-    if (cashTable.length) {
-      arr = cashTable;
-    }
-
-    res = arr.toSorted(function (a, b) {
-      switch (_typeof(a[sortBy])) {
-        case 'number':
-          return b[sortBy] - a[sortBy];
-
-        case 'string':
-          return -1;
-      }
-    });
-  }
-
-  cashTable = res;
-  th.dataset.sorted = true;
-  fillTheTable(table, res);
-}
-
 table.addEventListener('click', function (e) {
   var th = e.target.closest('th');
   if (!th) return;
   if (!table.contains(th)) return;
-  sortTable(th, users);
+  mySortTable(th);
 });
+fillTheTable(table, users);
+
+function mySortTable(th) {
+  var direction = 'asc';
+  var switching = true;
+  table = document.getElementById('users_table');
+  var sortBy = th.dataset.sort;
+  var n = th.dataset.n;
+  var switchingCount = 0;
+  var i;
+  var toSort;
+  var rows;
+
+  while (switching) {
+    switching = false;
+    toSort = false;
+    rows = table.rows;
+
+    switch (sortBy) {
+      case 'id':
+      case 'age':
+        for (i = 1; i < rows.length - 1; i++) {
+          var x = rows[i].getElementsByTagName('TD')[n];
+          var y = rows[i + 1].getElementsByTagName('TD')[n];
+
+          if (direction === 'asc') {
+            if (x.innerHTML - y.innerHTML > 0) {
+              toSort = true;
+              break;
+            }
+          } else if (direction === 'dsc') {
+            if (y.innerHTML - x.innerHTML > 0) {
+              toSort = true;
+              break;
+            }
+          }
+        }
+
+        break;
+
+      case 'name':
+      case 'email':
+        for (i = 1; i < rows.length - 1; i++) {
+          var _x = rows[i].getElementsByTagName('TD')[n];
+          var _y = rows[i + 1].getElementsByTagName('TD')[n];
+
+          if (direction === 'asc') {
+            if (_x.innerHTML.toLowerCase() > _y.innerHTML.toLowerCase()) {
+              toSort = true;
+              break;
+            }
+          } else if (direction === 'dsc') {
+            if (_x.innerHTML.toLowerCase() < _y.innerHTML.toLowerCase()) {
+              toSort = true;
+              break;
+            }
+          }
+        }
+
+        break;
+    }
+
+    if (toSort) {
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+      switchingCount++;
+    } else {
+      if (direction === 'asc' && switchingCount === 0) {
+        direction = 'dsc';
+        switching = true;
+      }
+    }
+  }
+}
