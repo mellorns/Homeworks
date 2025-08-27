@@ -1,0 +1,299 @@
+@use 'fonts';
+
+$text-color: #B7BACD;
+$dark-blue: #2B3040;
+$light-green: #13E28D;
+$deep-blue: #212534;
+$gray-color: #8D91A3;
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a,
+button {
+    transition: all .2s ease;
+}
+
+button {
+    cursor: pointer;
+}
+
+img {
+    vertical-align: top;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container {
+    width: min(90%, 1000px);
+    margin: 0 auto;
+
+}
+
+body {
+    font-size: 1rem;
+    color: $text-color;
+    font-family: sans-serif;
+    font-family: 'Lato';
+
+    background-color: $dark-blue;
+
+}
+
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    main {
+        min-height: 100dvh;
+        flex-grow: 1;
+    }
+}
+
+
+main .container {
+    background-image: url(../images/bg-image.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 154px 0;
+}
+
+
+.card {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    background-color: $dark-blue;
+
+
+    .card-nav {
+        padding: 30px 40px;
+
+
+        ul {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            gap: 70px;
+        }
+
+        li:hover .text,
+        li:hover svg * {
+            stroke: #fff;
+            color: #fff;
+        }
+
+        .svg-container div {
+            margin-bottom: 15px;
+        }
+
+        .icon {
+            width: 24px;
+            height: 22px;
+        }
+
+        .icon svg {
+            width: 100%;
+            height: 100%;
+
+
+        }
+
+        svg * {
+            stroke: $text-color;
+            fill: none;
+        }
+
+
+        .text {
+            color: $text-color;
+            font-family: 'Lato';
+            line-height: 1.75rem;
+            text-transform: uppercase;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+    }
+
+
+    .card-body {
+        padding: 60px 40px;
+        background-color: $deep-blue;
+
+        display: grid;
+
+        grid-template-columns: 200px 1fr;
+    }
+
+
+    .left-body {
+        padding-right: 40px;
+
+
+        .body-img {
+            margin-bottom: 25px;
+
+
+        }
+
+        .img-container {
+            height: 230px;
+        }
+
+
+        .rating {
+            height: 20px;
+
+        }
+    }
+
+
+    .rigth-body {
+
+        position: relative;
+
+        hgroup {
+            margin-bottom: 40px;
+            color: #fff;
+        }
+
+
+        h2 {
+            margin-bottom: 15px;
+        }
+
+        .card-description {
+            max-width: 277px;
+            font-size: 0.875rem;
+            line-height: 1.375rem;
+
+            margin-bottom: 50px;
+        }
+
+        .score {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 75px;
+            height: 75px;
+
+        }
+
+        .chart {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .percent {
+            position: absolute;
+            font-size: 1.25rem;
+            line-height: 1.375rem;
+        }
+
+    }
+
+    .rigth-bottom {
+        display: flex;
+        justify-content: space-between;
+        gap: 50px;
+    }
+
+    .card-discount {
+        font-size: 0.75rem;
+
+        line-height: 1.25rem;
+        color: #FFDD3F;
+    }
+
+    .card-price {
+        color: #fff;
+        font-size: 2rem;
+        line-height: 2rem;
+    }
+
+}
+
+.btn {
+    color: #FFF;
+    line-height: 1.25rem;
+    text-transform: uppercase;
+
+    border-radius: 2px;
+    border: none;
+    padding: 20px 30px;
+    background-color: $light-green;
+
+    cursor: pointer;
+
+
+    &:hover {
+        background-color: #3aca8e;
+    }
+}
+
+.ui-state-hover,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-state-focus,
+.ui-widget-content .ui-state-focus,
+.ui-widget-header .ui-state-focus,
+.ui-button:hover,
+.ui-button:focus {
+    .text {
+        color: #fff;
+    }
+
+    svg * {
+        stroke: #fff;
+    }
+
+}
+
+
+.ui-tabs-active,
+.ui-state-active {
+    .text {
+        color: #fff;
+    }
+
+    svg * {
+        stroke: #fff;
+    }
+
+
+}
+
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active,
+a.ui-button:active,
+.ui-button:active,
+.ui-button.ui-state-active:hover {
+    .text {
+        color: #fff;
+    }
+
+    svg * {
+        stroke: #fff;
+    }
+}
+
