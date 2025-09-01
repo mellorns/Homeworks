@@ -98,7 +98,7 @@ function additionalInfo(movieID) {
       switch (_context2.prev = _context2.next) {
         case 0:
           _context2.next = 2;
-          return regeneratorRuntime.awrap(fetch("http://www.omdbapi.com/?apikey=".concat(API_key, "&i=").concat(movieID)));
+          return regeneratorRuntime.awrap(fetch("https://www.omdbapi.com/?apikey=".concat(API_key, "&i=").concat(movieID)));
 
         case 2:
           responce = _context2.sent;

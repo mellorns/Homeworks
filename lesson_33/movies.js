@@ -97,7 +97,7 @@ function addToFav(movie) {
 
 async function additionalInfo(movieID) {
 
-    const responce = await fetch(`http://www.omdbapi.com/?apikey=${API_key}&i=${movieID}`)
+    const responce = await fetch(`https://www.omdbapi.com/?apikey=${API_key}&i=${movieID}`)
 
     const data = await responce.json()
 
