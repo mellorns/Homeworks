@@ -7,7 +7,7 @@ const API_key = '9d69102e'
 async function searchMovie(search, type, year) {
 
 
-    const url = DEV_MODE ? 'assets/mocks/movies.json' : `http://www.omdbapi.com/?apikey=${API_key}&s=${search}&type=${type}&y=${year}`
+    const url = DEV_MODE ? 'assets/mocks/movies.json' : `https://www.omdbapi.com/?apikey=${API_key}&s=${search}&type=${type}&y=${year}`
 
 
     const response = await fetch(url)
