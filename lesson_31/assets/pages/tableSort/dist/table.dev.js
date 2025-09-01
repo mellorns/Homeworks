@@ -96,50 +96,61 @@ function mySortTable(th) {
   while (switching) {
     switching = false;
     toSort = false;
-    rows = table.rows;
+    rows = table.rows; // switch (sortBy) {
+    //     case 'id':
+    //     case 'age':
+    //         for (i = 1; i < rows.length - 1; i++) {
+    //             const x = (rows[i].getElementsByTagName('TD')[n])
+    //             const y = (rows[i + 1].getElementsByTagName('TD')[n])
+    //             if (direction === 'asc') {
+    //                 if (x.innerHTML - y.innerHTML > 0) {
+    //                     toSort = true
+    //                     break
+    //                 }
+    //             } else if (direction === 'dsc') {
+    //                 if (y.innerHTML - x.innerHTML > 0) {
+    //                     toSort = true
+    //                     break
+    //                 }
+    //             }
+    //         }
+    //         break
+    //     case 'name':
+    //     case 'email':
+    //         for (i = 1; i < rows.length - 1; i++) {
+    //             const x = (rows[i].getElementsByTagName('TD')[n])
+    //             const y = (rows[i + 1].getElementsByTagName('TD')[n])
+    //             if (direction === 'asc') {
+    //                 if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+    //                     toSort = true
+    //                     break
+    //                 }
+    //             } else if (direction === 'dsc') {
+    //                 if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+    //                     toSort = true
+    //                     break
+    //                 }
+    //             }
+    //         }
+    //         break
+    // }
 
-    switch (sortBy) {
-      case 'id':
-      case 'age':
-        for (i = 1; i < rows.length - 1; i++) {
-          var x = rows[i].getElementsByTagName('TD')[n];
-          var y = rows[i + 1].getElementsByTagName('TD')[n];
+    var compare = function compare(x, y, direction) {
+      if (isNaN(Number(x)) && isNaN(Number(y))) {
+        return direction === 'asc' ? x.toLowerCase() > y.toLowerCase() : y.toLowerCase() > x.toLowerCase();
+      } else {
+        return (direction === 'asc' ? x - y : y - x) > 0;
+      }
+    };
 
-          if (direction === 'asc') {
-            if (x.innerHTML - y.innerHTML > 0) {
-              toSort = true;
-              break;
-            }
-          } else if (direction === 'dsc') {
-            if (y.innerHTML - x.innerHTML > 0) {
-              toSort = true;
-              break;
-            }
-          }
-        }
+    for (i = 1; i < rows.length - 1; i++) {
+      var x = rows[i].getElementsByTagName('TD')[n];
+      var y = rows[i + 1].getElementsByTagName('TD')[n];
 
+      if (compare(x.innerHTML, y.innerHTML, direction)) {
+        toSort = true;
         break;
-
-      case 'name':
-      case 'email':
-        for (i = 1; i < rows.length - 1; i++) {
-          var _x = rows[i].getElementsByTagName('TD')[n];
-          var _y = rows[i + 1].getElementsByTagName('TD')[n];
-
-          if (direction === 'asc') {
-            if (_x.innerHTML.toLowerCase() > _y.innerHTML.toLowerCase()) {
-              toSort = true;
-              break;
-            }
-          } else if (direction === 'dsc') {
-            if (_x.innerHTML.toLowerCase() < _y.innerHTML.toLowerCase()) {
-              toSort = true;
-              break;
-            }
-          }
-        }
-
-        break;
+      }
     }
 
     if (toSort) {

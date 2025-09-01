@@ -49,6 +49,8 @@ table.addEventListener('click', function (e) {
 
 })
 
+
+
 fillTheTable(table, users)
 
 function mySortTable(th) {
@@ -69,48 +71,69 @@ function mySortTable(th) {
         toSort = false
         rows = table.rows
 
-        switch (sortBy) {
-            case 'id':
-            case 'age':
-                for (i = 1; i < rows.length - 1; i++) {
-                    const x = (rows[i].getElementsByTagName('TD')[n])
-                    const y = (rows[i + 1].getElementsByTagName('TD')[n])
+        // switch (sortBy) {
+        //     case 'id':
+        //     case 'age':
+        //         for (i = 1; i < rows.length - 1; i++) {
+        //             const x = (rows[i].getElementsByTagName('TD')[n])
+        //             const y = (rows[i + 1].getElementsByTagName('TD')[n])
 
-                    if (direction === 'asc') {
-                        if (x.innerHTML - y.innerHTML > 0) {
-                            toSort = true
-                            break
-                        }
-                    } else if (direction === 'dsc') {
-                        if (y.innerHTML - x.innerHTML > 0) {
-                            toSort = true
-                            break
-                        }
-                    }
-                }
-                break
-            case 'name':
-            case 'email':
-                for (i = 1; i < rows.length - 1; i++) {
-                    const x = (rows[i].getElementsByTagName('TD')[n])
-                    const y = (rows[i + 1].getElementsByTagName('TD')[n])
+        //             if (direction === 'asc') {
+        //                 if (x.innerHTML - y.innerHTML > 0) {
+        //                     toSort = true
+        //                     break
+        //                 }
+        //             } else if (direction === 'dsc') {
+        //                 if (y.innerHTML - x.innerHTML > 0) {
+        //                     toSort = true
+        //                     break
+        //                 }
+        //             }
+        //         }
+        //         break
+        //     case 'name':
+        //     case 'email':
+        //         for (i = 1; i < rows.length - 1; i++) {
+        //             const x = (rows[i].getElementsByTagName('TD')[n])
+        //             const y = (rows[i + 1].getElementsByTagName('TD')[n])
 
-                    if (direction === 'asc') {
-                        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-                            toSort = true
-                            break
-                        }
-                    } else if (direction === 'dsc') {
-                        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
-                            toSort = true
-                            break
-                        }
+        //             if (direction === 'asc') {
+        //                 if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+        //                     toSort = true
+        //                     break
+        //                 }
+        //             } else if (direction === 'dsc') {
+        //                 if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+        //                     toSort = true
+        //                     break
+        //                 }
 
-                    }
-                }
-                break
+        //             }
+        //         }
+        //         break
+        // }
+
+
+        const compare = (x, y, direction) => {
+            if (isNaN(Number(x)) && isNaN(Number(y))) {
+                return direction === 'asc'
+                    ? x.toLowerCase() > y.toLowerCase()
+                    : y.toLowerCase() > x.toLowerCase()
+            } else {
+                return (direction === 'asc' ? x - y : y - x) > 0
+            }
         }
 
+        for (i = 1; i < rows.length - 1; i++) {
+            const x = (rows[i].getElementsByTagName('TD')[n])
+            const y = (rows[i + 1].getElementsByTagName('TD')[n])
+
+            if (compare(x.innerHTML, y.innerHTML, direction)) {
+                toSort = true
+                break
+            }
+        }
+        
         if (toSort) {
             rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
             switching = true
