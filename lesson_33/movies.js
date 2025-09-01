@@ -1,4 +1,5 @@
 const DEV_MODE = false
+let favMovies = JSON.parse(localStorage.getItem('favMovies')) || []
 
 
 const API_key = '9d69102e'
@@ -49,7 +50,6 @@ function showMoviesList(movies) {
 
     const list = createMovieList(movies)
 
-
     document.getElementById('movies-list').innerHTML = list
 
     addToFavBtn(movies)
@@ -71,7 +71,7 @@ function addToFavBtn(movies) {
                                 favMovies = localMovies.toSpliced(i, 1)
                                 localStorage.setItem('favMovies', JSON.stringify(favMovies))
                                 duplicate = true
-                         
+
                                 break
                             }
                         }
@@ -85,7 +85,6 @@ function addToFavBtn(movies) {
         })
     })
 }
-let favMovies = []
 
 function addToFav(movie) {
 
@@ -208,7 +207,7 @@ document.getElementById('year').setAttribute('max', new Date().getFullYear())
 
 document.getElementById('show-fav').addEventListener('click', (e) => {
 
-    const movies = JSON.parse(localStorage.getItem('favMovies'))
+    const movies = JSON.parse(localStorage.getItem('favMovies')) || []
 
     const list = createMovieList(movies)
 

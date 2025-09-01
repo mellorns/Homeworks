@@ -1,6 +1,7 @@
 "use strict";
 
 var DEV_MODE = false;
+var favMovies = JSON.parse(localStorage.getItem('favMovies')) || [];
 var API_key = '9d69102e';
 
 function searchMovie(search, type, year) {
@@ -83,8 +84,6 @@ function addToFavBtn(movies) {
     });
   });
 }
-
-var favMovies = [];
 
 function addToFav(movie) {
   favMovies.push(movie);
@@ -173,7 +172,7 @@ form.addEventListener('submit', function (e) {
 });
 document.getElementById('year').setAttribute('max', new Date().getFullYear());
 document.getElementById('show-fav').addEventListener('click', function (e) {
-  var movies = JSON.parse(localStorage.getItem('favMovies'));
+  var movies = JSON.parse(localStorage.getItem('favMovies')) || [];
   var list = createMovieList(movies);
   openModalInfo(list, 'fav-list');
   addToFavBtn(movies);
