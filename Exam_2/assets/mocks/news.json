@@ -1,0 +1,74 @@
+[
+    {
+        "author": "ALJA BRUN",
+        "authorImg": "assets/images/author_photo_1.png",
+        "title": "SEE THE UNMATCHED BEAUTY OF THE GREAT.",
+        "text": "Free directories: directories are perfect for customers that are searching for...",
+        "newsImg": "assets/images/news_1.png",
+        "data": "20 Jan 2020"
+    },
+    {
+        "author": "DOMINIC FREEMAN",
+        "authorImg": "assets/images/author_photo_2.png",
+        "title": "EFFECTIVE ADVERTISING POINTERS.",
+        "text": "Having a home based business is a wonderful asset to your life...",
+        "newsImg": "assets/images/news_2.png",
+        "data": "13 Dec 2019"
+    },
+    {
+        "author": "ALICE WARD",
+        "authorImg": "assets/images/author_photo_3.png",
+        "title": "HYPNOTIZE YOURSELF INTO THE GHOST.",
+        "text": "There are many things that are important to catalog design...",
+        "newsImg": "assets/images/news_3.png",
+        "data": "30 Nov 2019"
+    },
+    {
+        "author": "JAMES SMITH",
+        "authorImg": "assets/images/author_photo_3.png",
+        "title": "DESIGN THINKING IN MODERN PROJECTS.",
+        "text": "A clear strategy and innovative ideas are key elements in successful design...",
+        "newsImg": "assets/images/news_4.jpeg",
+        "data": "15 Dec 2019"
+    },
+    {
+        "author": "EMILY JOHNSON",
+        "authorImg": "assets/images/author_photo_3.png",
+        "title": "CREATIVE PROCESS BEHIND GREAT BRANDS.",
+        "text": "Behind every strong brand lies creativity, persistence and clear communication...",
+        "newsImg": "assets/images/news_3.png",
+        "data": "05 Jan 2020"
+    },
+    {
+        "author": "MICHAEL BROWN",
+        "authorImg": "assets/images/author_photo_3.png",
+        "title": "THE FUTURE OF INTERACTIVE MEDIA.",
+        "text": "Technology is shaping the way we consume and create interactive experiences...",
+        "newsImg": "assets/images/news_3.png",
+        "data": "22 Jan 2020"
+    },
+    {
+        "author": "SOPHIA MILLER",
+        "authorImg": "assets/images/author_photo_3.png",
+        "title": "MINIMALISM AS A DESIGN PRINCIPLE.",
+        "text": "Minimalism emphasizes clarity, balance, and a focus on what truly matters...",
+        "newsImg": "assets/images/news_3.png",
+        "data": "10 Feb 2020"
+    },
+    {
+        "author": "DAVID WILSON",
+        "authorImg": "assets/images/author_photo_3.png",
+        "title": "TRENDS IN VISUAL STORYTELLING.",
+        "text": "Storytelling through visuals is becoming an essential part of digital culture...",
+        "newsImg": "assets/images/news_3.png",
+        "data": "28 Feb 2020"
+    },
+    {
+        "author": "OLIVIA TAYLOR",
+        "authorImg": "assets/images/author_photo_3.png",
+        "title": "HOW TO BALANCE ART AND FUNCTION.",
+        "text": "Design is always a balance between aesthetic expression and functionality...",
+        "newsImg": "assets/images/news_3.png",
+        "data": "12 Mar 2020"
+    }
+]
