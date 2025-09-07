@@ -700,8 +700,6 @@ address a {
 
 
 #news_slider {
-
-
   .news-item {
     position: relative;
   }
@@ -712,11 +710,7 @@ address a {
     height: 100%;
     left: 0;
     top: 0;
-
-
   }
-
-
   &>li {
     background-color: #fff;
     height: 514px;
@@ -961,6 +955,10 @@ address a {
       &.invalid {
         outline: 2px solid red;
         border-radius: 5px;
+      }
+
+      &:focus {
+        opacity: 1;
       }
 
 

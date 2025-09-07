@@ -1,4 +1,3 @@
-import { BOT_TOKEN, CHAT_ID } from './telegram_data.js';
 
 
 var lazyLoadInstance = new LazyLoad();
@@ -67,6 +66,7 @@ function initNewsSlider() {
         slideMove: 1, // slidemove will be 1 if loop is true
         slideMargin: 30,
         adaptiveHeight: false,
+        controls: false,
         responsive: [{
             breakpoint: 1050,
             settings: {
@@ -120,24 +120,29 @@ function initNewsSlider() {
 
 
 let headerScrolled = false
-document.addEventListener('scroll', function (e) {
 
-    const header = document.querySelector('header')
-    let heigth = window.innerHeight - 150
+document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('scroll', function (e) {
+
+        const header = document.querySelector('header')
+        let heigth = window.innerHeight - 150
 
 
-    if (window.scrollY > heigth && !headerScrolled) {
-        const activeSlide = document.querySelector('#lightSlider li.active')
-        const gradient = window.getComputedStyle(activeSlide).backgroundImage.split(', ').splice(1).join(', ')
-        headerScrolled = true
-        header.classList.add('scrolled-header')
-        header.style.background = gradient
-    } else if (window.scrollY < heigth && headerScrolled) {
-        headerScrolled = false
-        header.classList.remove('scrolled-header')
-        header.style.background = ''
-    }
+        if (window.scrollY > heigth && !headerScrolled) {
+            const activeSlide = document.querySelector('#lightSlider li.active')
+            const gradient = window.getComputedStyle(activeSlide).backgroundImage.split(', ').splice(1).join(', ')
+            headerScrolled = true
+            header.classList.add('scrolled-header')
+            header.style.background = gradient
+        } else if (window.scrollY < heigth && headerScrolled) {
+            headerScrolled = false
+            header.classList.remove('scrolled-header')
+            header.style.background = ''
+        }
+    })
 })
+
+
 
 
 $('.header-navigation').click((e) => {
@@ -316,6 +321,8 @@ form.addEventListener('submit', async function (e) {
     e.preventDefault()
     if (!validate()) return
 
+    const BOT_TOKEN = '8265859828:AAEwWUw8V8y4UrOstvtKdD4ADxEWmNbjaRI'
+    const CHAT_ID = '-4957231386'
 
 
     const name = document.getElementById('name').value
@@ -347,8 +354,8 @@ form.addEventListener('submit', async function (e) {
             icon: 'error',
             position: 'top-right',
         })
-        loadingBtn.style.display = 'none'
         e.submitter.style.display = 'block'
+        loadingBtn.style.display = 'none'
     }
 })
 

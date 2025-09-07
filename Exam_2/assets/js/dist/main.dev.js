@@ -1,7 +1,5 @@
 "use strict";
 
-var _telegram_data = require("./telegram_data.js");
-
 var lazyLoadInstance = new LazyLoad();
 $(document).ready(function () {
   var slider = $("#lightSlider").lightSlider({
@@ -61,6 +59,7 @@ function initNewsSlider() {
     // slidemove will be 1 if loop is true
     slideMargin: 30,
     adaptiveHeight: false,
+    controls: false,
     responsive: [{
       breakpoint: 1050,
       settings: {
@@ -107,21 +106,23 @@ function initNewsSlider() {
 
 ;
 var headerScrolled = false;
-document.addEventListener('scroll', function (e) {
-  var header = document.querySelector('header');
-  var heigth = window.innerHeight - 150;
+document.addEventListener('DOMContentLoaded', function () {
+  document.addEventListener('scroll', function (e) {
+    var header = document.querySelector('header');
+    var heigth = window.innerHeight - 150;
 
-  if (window.scrollY > heigth && !headerScrolled) {
-    var activeSlide = document.querySelector('#lightSlider li.active');
-    var gradient = window.getComputedStyle(activeSlide).backgroundImage.split(', ').splice(1).join(', ');
-    headerScrolled = true;
-    header.classList.add('scrolled-header');
-    header.style.background = gradient;
-  } else if (window.scrollY < heigth && headerScrolled) {
-    headerScrolled = false;
-    header.classList.remove('scrolled-header');
-    header.style.background = '';
-  }
+    if (window.scrollY > heigth && !headerScrolled) {
+      var activeSlide = document.querySelector('#lightSlider li.active');
+      var gradient = window.getComputedStyle(activeSlide).backgroundImage.split(', ').splice(1).join(', ');
+      headerScrolled = true;
+      header.classList.add('scrolled-header');
+      header.style.background = gradient;
+    } else if (window.scrollY < heigth && headerScrolled) {
+      headerScrolled = false;
+      header.classList.remove('scrolled-header');
+      header.style.background = '';
+    }
+  });
 });
 $('.header-navigation').click(function (e) {
   var a = e.target.tagName;
@@ -260,7 +261,7 @@ function resetError(el) {
 }
 
 form.addEventListener('submit', function _callee(e) {
-  var name, email, loadingBtn, msg, resp;
+  var BOT_TOKEN, CHAT_ID, name, email, loadingBtn, msg, resp;
   return regeneratorRuntime.async(function _callee$(_context2) {
     while (1) {
       switch (_context2.prev = _context2.next) {
@@ -275,16 +276,18 @@ form.addEventListener('submit', function _callee(e) {
           return _context2.abrupt("return");
 
         case 3:
+          BOT_TOKEN = '8265859828:AAEwWUw8V8y4UrOstvtKdD4ADxEWmNbjaRI';
+          CHAT_ID = '-4957231386';
           name = document.getElementById('name').value;
           email = document.getElementById('email').value;
           loadingBtn = document.getElementById('loadingBtn');
           e.submitter.style.display = 'none';
           loadingBtn.style.display = 'block';
           msg = "<b>Name: </b>:".concat(name, "%0a") + "<b>Email: </b>".concat(email);
-          _context2.next = 11;
-          return regeneratorRuntime.awrap(fetch("https://api.telegram.org/bot".concat(_telegram_data.BOT_TOKEN, "/sendMessage?chat_id=").concat(_telegram_data.CHAT_ID, "&text=").concat(msg, "&parse_mode=html")));
+          _context2.next = 13;
+          return regeneratorRuntime.awrap(fetch("https://api.telegram.org/bot".concat(BOT_TOKEN, "/sendMessage?chat_id=").concat(CHAT_ID, "&text=").concat(msg, "&parse_mode=html")));
 
-        case 11:
+        case 13:
           resp = _context2.sent;
 
           if (resp.ok) {
@@ -303,11 +306,11 @@ form.addEventListener('submit', function _callee(e) {
               icon: 'error',
               position: 'top-right'
             });
-            loadingBtn.style.display = 'none';
             e.submitter.style.display = 'block';
+            loadingBtn.style.display = 'none';
           }
 
-        case 13:
+        case 15:
         case "end":
           return _context2.stop();
       }
