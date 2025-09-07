@@ -53,7 +53,7 @@ function intiMap() {
 
     var map = L.map('map').setView([50.450397, 30.594897], 13);
 
-    L.tileLayer('https://mellorns.github.io/tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}.png', {
+    L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a>'
     }).addTo(map);
 
