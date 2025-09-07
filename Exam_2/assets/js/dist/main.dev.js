@@ -2,6 +2,7 @@
 
 var _telegram_data = require("./telegram_data.js");
 
+var lazyLoadInstance = new LazyLoad();
 $(document).ready(function () {
   var slider = $("#lightSlider").lightSlider({
     item: 1,
@@ -211,6 +212,53 @@ window.addEventListener('resize', function (e) {
   }
 });
 var form = document.getElementById('subscr');
+var formElementsValidation = [{
+  id: "name",
+  conditions: [{
+    condition: function condition(value) {
+      return value === '';
+    },
+    msg: "Enter your name"
+  }]
+}, {
+  id: "email",
+  conditions: [{
+    condition: function condition(value) {
+      return value === '';
+    },
+    msg: "Enter email"
+  }]
+}];
+
+function validate() {
+  var isValid = true;
+  var name = document.getElementById('name');
+  var email = document.getElementById('email');
+  formElementsValidation.forEach(function (el) {
+    var elem = document.getElementById(el.id);
+    var value = elem.value;
+    el.conditions.forEach(function (item) {
+      if (item.condition(value)) {
+        isValid = false;
+        elem.classList.add('invalid');
+        elem.parentElement.previousElementSibling.innerText = item.msg;
+      }
+    });
+  });
+  return isValid;
+}
+
+document.addEventListener('keydown', function (e) {
+  if (e.target.classList.contains('invalid')) {
+    resetError(e.target);
+  }
+});
+
+function resetError(el) {
+  el.classList.remove('invalid');
+  el.parentElement.previousElementSibling.innerText = '';
+}
+
 form.addEventListener('submit', function _callee(e) {
   var name, email, loadingBtn, msg, resp;
   return regeneratorRuntime.async(function _callee$(_context2) {
@@ -218,33 +266,55 @@ form.addEventListener('submit', function _callee(e) {
       switch (_context2.prev = _context2.next) {
         case 0:
           e.preventDefault();
+
+          if (validate()) {
+            _context2.next = 3;
+            break;
+          }
+
+          return _context2.abrupt("return");
+
+        case 3:
           name = document.getElementById('name').value;
           email = document.getElementById('email').value;
           loadingBtn = document.getElementById('loadingBtn');
           e.submitter.style.display = 'none';
           loadingBtn.style.display = 'block';
           msg = "<b>Name: </b>:".concat(name, "%0a") + "<b>Email: </b>".concat(email);
-          _context2.next = 9;
+          _context2.next = 11;
           return regeneratorRuntime.awrap(fetch("https://api.telegram.org/bot".concat(_telegram_data.BOT_TOKEN, "/sendMessage?chat_id=").concat(_telegram_data.CHAT_ID, "&text=").concat(msg, "&parse_mode=html")));
 
-        case 9:
+        case 11:
           resp = _context2.sent;
 
           if (resp.ok) {
-            alert('success');
+            $.toast({
+              heading: "Succes",
+              icon: 'success',
+              position: 'top-right'
+            });
             loadingBtn.style.display = 'none';
             e.submitter.style.display = 'block';
             form.reset();
           } else {
-            alert('something went wrong');
+            $.toast({
+              heading: "Error ocured!",
+              text: 'Please check information entered or try again later',
+              icon: 'error',
+              position: 'top-right'
+            });
             loadingBtn.style.display = 'none';
             e.submitter.style.display = 'block';
           }
 
-        case 11:
+        case 13:
         case "end":
           return _context2.stop();
       }
     }
   });
 });
+var wow = new WOW({
+  animateClass: 'animate__animated'
+});
+wow.init();

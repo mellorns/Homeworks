@@ -43,7 +43,7 @@ img {
 
 body {
   color: $text-color;
-  font-family: "Source Sans Pro";
+  font-family: "Montserrat";
   font-size: 1rem;
   font-style: normal;
   font-weight: 400;
@@ -192,8 +192,7 @@ input:-webkit-autofill:active {
     }
 
     a {
-      // font-family: "Source Sans Pro";
-      font-family: "Open Sans";
+      font-family: "Source Sans Pro";
       font-size: 14px;
       font-style: normal;
       font-weight: 400;
@@ -293,13 +292,10 @@ header {
 
   .header-navigation a {
     color: #fff;
-    // font-family: "Source Sans Pro";
-    font-family: "Open Sans";
+    font-family: "Source Sans Pro";
     font-size: 0.875rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
     text-decoration: none;
+    letter-spacing: 1px;
 
     &::before {
       content: '';
@@ -380,11 +376,16 @@ header {
       text-align: center;
       font-family: 'Montserrat';
 
-      h1 {
+      h2 {
         margin-bottom: 20px;
         font-size: clamp(35px, 5vw, 5rem);
         font-weight: 700;
         letter-spacing: 0.5rem;
+        color: #fff;
+
+        &::before {
+          display: none;
+        }
       }
 
       p {
@@ -581,14 +582,14 @@ header {
   }
 
   .btn-container {
-    margin-bottom: 60px;
+    margin-bottom: 56px;
   }
 
 }
 
 address a {
   display: inline-flex;
-  gap: 10px;
+  gap: 8px;
   font-size: 0.9375rem;
   font-style: italic;
   font-weight: 400;
@@ -677,7 +678,7 @@ address a {
 
     .nextSlide {
       right: -10.2%;
-      top: 61%;
+      top: 62%;
       left: unset;
       transform: translate(-50%, -50%) rotate(-90deg);
     }
@@ -685,7 +686,7 @@ address a {
     .prev-slide {
 
       left: -6.8%;
-      top: 61%;
+      top: 62%;
       transform: translate(-50%, -50%) rotate(90deg);
     }
 
@@ -806,7 +807,7 @@ address a {
 .gallery {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
-  gap: 10px;
+  gap: 5px;
   margin-bottom: 56px;
 
   li {
@@ -855,7 +856,7 @@ address a {
   }
 
   h2 {
-    margin-bottom: 42px;
+    margin-bottom: 46px;
   }
 
   address {
@@ -871,6 +872,10 @@ address a {
     svg * {
       fill: #7E5AFF;
     }
+
+   .icon-color {
+    color: #7E5AFF;
+   }
   }
 
   .contacts-info {
@@ -897,16 +902,31 @@ address a {
     form {
       width: 100%;
       max-width: 768px;
-      padding: 13px 0 0 14px;
+      padding: 6px 0 0 15px;
     }
+
 
 
     .form-row {
-      margin-bottom: 44px;
+      margin-bottom: 38px;
+    }
+
+
+    div.error-field {
+      border: 1px solid #ff5555;
+      margin-bottom: 10px;
     }
 
     .form-row:nth-child(2) {
-      margin-bottom: 31px;
+      margin-bottom: 28px;
+    }
+
+    .invalid-feedback {
+      transform: translateY(-20px);
+      border-radius: 5px;
+      font-size: 1.4rem;
+      font-family: "Montserrat";
+      color: #ff5555;
     }
 
     label {
@@ -916,24 +936,31 @@ address a {
       &:hover input {
         opacity: 1;
         transition: all .3s ease-in-out;
-
       }
     }
 
     input {
       width: 100%;
-      padding-bottom: 10px;
+      padding-bottom: 8px;
       border: none;
       outline: none;
       border-bottom: 1px solid $text-color;
       opacity: .2;
       color: #000;
+      position: relative;
 
       font-family: 'Montserrat';
       font-size: 18px;
       font-style: normal;
       font-weight: 400;
       line-height: 27px;
+
+      &.invalid {
+        outline: 2px solid red;
+        border-radius: 5px;
+      }
+
+
     }
 
     input::placeholder {
@@ -1245,7 +1272,7 @@ a#load-map-link {
     }
 
     .button-container {
-      text-align: center;
+      justify-content: center;
     }
 
     .contacts-info {

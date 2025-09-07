@@ -26,9 +26,6 @@ mapLink.onclick = function (e) {
     document.addEventListener('click', function (e) {
         const map = document.getElementById('map')
 
-
-
-
         if (!map.contains(e.target)) {
             map.style.zIndex = 1
         } else {

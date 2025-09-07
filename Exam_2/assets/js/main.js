@@ -1,5 +1,8 @@
 import { BOT_TOKEN, CHAT_ID } from './telegram_data.js';
 
+
+var lazyLoadInstance = new LazyLoad();
+
 $(document).ready(function () {
     const slider = $("#lightSlider").lightSlider({
         item: 1,
@@ -247,10 +250,73 @@ window.addEventListener('resize', function (e) {
 })
 
 const form = document.getElementById('subscr')
+const formElementsValidation = [
+    {
+        id: "name",
+        conditions: [
+            {
+                condition: (value) => value === '',
+                msg: "Enter your name"
+            }
+        ]
+    },
+    {
+        id: "email",
+        conditions: [
+            {
+                condition: (value) => value === '',
+                msg: "Enter email"
+            },
+        ]
+    }
+]
+
+function validate() {
+
+    let isValid = true
+
+    const name = document.getElementById('name')
+    const email = document.getElementById('email')
+
+
+    formElementsValidation.forEach(el => {
+        const elem = document.getElementById(el.id)
+        const value = elem.value
+
+
+        el.conditions.forEach(item => {
+            if (item.condition(value)) {
+                isValid = false
+                elem.classList.add('invalid')
+                elem.parentElement.previousElementSibling.innerText = item.msg
+            }
+        })
+
+    })
+
+    return isValid
+
+
+}
+
+document.addEventListener('keydown', function (e) {
+    if (e.target.classList.contains('invalid')) {
+        resetError(e.target)
+    }
+})
+
+function resetError(el) {
+    el.classList.remove('invalid')
+    el.parentElement.previousElementSibling.innerText = ''
+
+}
 
 
 form.addEventListener('submit', async function (e) {
     e.preventDefault()
+    if (!validate()) return
+
+
 
     const name = document.getElementById('name').value
     const email = document.getElementById('email').value
@@ -265,14 +331,30 @@ form.addEventListener('submit', async function (e) {
     const resp = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${msg}&parse_mode=html`)
 
     if (resp.ok) {
-        alert('success')
+        $.toast({
+            heading: "Succes",
+            icon: 'success',
+            position: 'top-right',
+        })
+
         loadingBtn.style.display = 'none'
         e.submitter.style.display = 'block'
         form.reset()
     } else {
-        alert('something went wrong')
+        $.toast({
+            heading: "Error ocured!",
+            text: 'Please check information entered or try again later',
+            icon: 'error',
+            position: 'top-right',
+        })
         loadingBtn.style.display = 'none'
         e.submitter.style.display = 'block'
     }
 })
 
+const wow = new WOW(
+    {
+        animateClass: 'animate__animated'
+    }
+)
+wow.init();
