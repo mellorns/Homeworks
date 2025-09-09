@@ -117,6 +117,11 @@ document.addEventListener('DOMContentLoaded', function () {
       headerScrolled = true;
       header.classList.add('scrolled-header');
       header.style.background = gradient;
+      var rootElem = document.querySelector(':root');
+      var stylesObj = getComputedStyle(rootElem);
+      var matches = gradient.match(/rgb\([^)]*\)/g);
+      rootElem.style.setProperty('--accent-color', matches[1]);
+      console.log(stylesObj.getPropertyValue('--accent-color'));
     } else if (window.scrollY < heigth && headerScrolled) {
       headerScrolled = false;
       header.classList.remove('scrolled-header');

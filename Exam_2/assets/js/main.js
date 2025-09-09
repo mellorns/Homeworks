@@ -59,7 +59,6 @@ $(document).ready(function () {
 let slider
 function initNewsSlider() {
 
-
     slider = $("#news_slider").lightSlider({
         item: 3,
         autoWidth: false,
@@ -119,9 +118,15 @@ function initNewsSlider() {
 };
 
 
+
+
 let headerScrolled = false
 
 document.addEventListener('DOMContentLoaded', function () {
+
+
+    
+
     document.addEventListener('scroll', function (e) {
 
         const header = document.querySelector('header')
@@ -134,6 +139,18 @@ document.addEventListener('DOMContentLoaded', function () {
             headerScrolled = true
             header.classList.add('scrolled-header')
             header.style.background = gradient
+
+
+            const rootElem = document.querySelector(':root')
+
+            const stylesObj = getComputedStyle(rootElem)
+
+            const matches = gradient.match(/rgb\([^)]*\)/g);
+
+            rootElem.style.setProperty('--accent-color', matches[1])
+
+            console.log(stylesObj.getPropertyValue('--accent-color'));
+
         } else if (window.scrollY < heigth && headerScrolled) {
             headerScrolled = false
             header.classList.remove('scrolled-header')

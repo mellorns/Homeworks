@@ -2,6 +2,10 @@
 
 $text-color: #2C4058;
 
+:root {
+  --accent-color: #ff3636;
+}
+
 *,
 *::before,
 *::after {
@@ -540,7 +544,7 @@ header {
     max-width: 630px;
 
     img {
-      box-shadow: clamp(-260px, -18vw, -170px) clamp(-59px, -5vw, -70px) #55B7FF;
+      box-shadow: clamp(-260px, -18vw, -170px) clamp(-59px, -5vw, -70px) var(--accent-color);
     }
 
     img.reversed-shadow {
